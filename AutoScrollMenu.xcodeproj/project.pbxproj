@@ -18,6 +18,7 @@
 		685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */; };
 		685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */; };
 		685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */; };
+		68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */; };
 		68E8534527C3810B000FFBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534427C3810B000FFBA1 /* AppDelegate.swift */; };
 		68E8534727C3810B000FFBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534627C3810B000FFBA1 /* SceneDelegate.swift */; };
 		68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534827C3810B000FFBA1 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLString+Extension.swift"; sourceTree = "<group>"; };
 		685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLViewController+Extension.swift"; sourceTree = "<group>"; };
+		68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLView+Extentson.swift"; sourceTree = "<group>"; };
 		68E8534127C3810B000FFBA1 /* AutoScrollMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoScrollMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E8534427C3810B000FFBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68E8534627C3810B000FFBA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */,
 				685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */,
 				685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */,
+				68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				685DCACC27C383760002B6BE /* PagerMenuCell.swift in Sources */,
 				685DCAD727C3A6DB0002B6BE /* TLCollectionView+Extension.swift in Sources */,
 				685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */,
+				68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */,
 				685DCAD527C3A3C10002B6BE /* MenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,42 +1,12 @@
 
 import UIKit
 
-public enum JATabItemWidthType: Int {
-    case equal
-    case dynamic
-    case custom
-}
-
 public class PagerVC: UIViewController {
     
     @IBOutlet weak fileprivate var tabsMenuView: UIView!
     @IBOutlet weak fileprivate var containerScrollView: UIScrollView!
     @IBOutlet weak fileprivate var tabsCollectionView: UICollectionView!
     @IBOutlet weak fileprivate var tabsMenuHeightConstraint: NSLayoutConstraint!
-    
-    open var tabItemWidthType: JATabItemWidthType = .dynamic {
-        didSet {
-            reload()
-        }
-    }
-   
-    open var tabItemCustomWidth: CGFloat = 0 {
-        didSet {
-            reload()
-        }
-    }
-    
-    open var tabEqualWidth: CGFloat = 80 {
-        didSet {
-            reload()
-        }
-    }
-    
-    open var selectedPageIndex: Int = 0 {
-        didSet {
-            scrollContent(to: selectedPageIndex)
-        }
-    }
     
     open var tabMenuHeight: CGFloat = 44 {
         didSet {
@@ -93,13 +63,14 @@ public class PagerVC: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupContents()
-        tabsCollectionView.register(PagerMenuCell.self, forCellWithReuseIdentifier: "PagerMenuCell")
-        tabsCollectionView.register(UINib(nibName: "PagerMenuCell", bundle:Bundle(for: PagerMenuCell.self)), forCellWithReuseIdentifier: "PagerMenuCell")
+        tabsCollectionView.registerCell(PagerMenuCell.self)
+        tabsCollectionView.registerNib(PagerMenuCell.self)
     }
     
     func setupContents() {
+        containerScrollView.isScrollEnabled = true
         for page in pages {
             addChild(page)
             containerScrollView.addSubview(page.view)
@@ -120,11 +91,10 @@ public class PagerVC: UIViewController {
         let contentScrollWidth = containerScrollViewSize.width * CGFloat(pages.count)
         containerScrollView.contentSize = CGSize(width: contentScrollWidth, height: containerScrollViewSize.height)
         
-        let initialY: CGFloat = 0.0
         var initialX: CGFloat = 0.0
         for (index, page) in pages.enumerated() {
             initialX = containerScrollViewSize.width * CGFloat(index)
-            page.view.frame = CGRect(x: initialX, y: initialY, width: containerScrollViewSize.width, height: containerScrollViewSize.height)
+            page.view.frame = CGRect(x: initialX, y: 0, width: containerScrollViewSize.width, height: containerScrollViewSize.height)
         }
     }
     
@@ -172,21 +142,12 @@ extension PagerVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch tabItemWidthType {
-        case .custom:
-            return CGSize(width: tabItemCustomWidth, height: tabMenuHeight)
-        case .dynamic:
-            if indexPath.row == currentPage {
-                let width = getTitleWidth(title: pages[indexPath.row].title!, font: selectedTabTitleFont)
-                return CGSize(width: width, height: tabMenuHeight)
-            }
-            let width = getTitleWidth(title: pages[indexPath.row].title!, font: tabTitleFont)
+        if indexPath.row == currentPage {
+            let width = getTitleWidth(title: pages[indexPath.row].title!, font: selectedTabTitleFont)
             return CGSize(width: width, height: tabMenuHeight)
-        case .equal:
-            let estimatedSize = CGSize(width: tabEqualWidth,
-                                       height: tabMenuHeight)
-            return estimatedSize
         }
+        let width = getTitleWidth(title: pages[indexPath.row].title!, font: tabTitleFont)
+        return CGSize(width: width, height: tabMenuHeight)
     }
 }
 
@@ -202,8 +163,7 @@ extension PagerVC: UIScrollViewDelegate {
         currentPage = page
         let containerWidth = containerScrollView.frame.size.width
         let containerHeight = containerScrollView.frame.size.height
-        let initialY: CGFloat = 0.0
-        let contentFrameToScroll = CGRect(x: containerWidth*CGFloat(page), y: initialY, width: containerWidth, height: containerHeight)
+        let contentFrameToScroll = CGRect(x: containerWidth*CGFloat(page), y: 0, width: containerWidth, height: containerHeight)
         containerScrollView.scrollRectToVisible(contentFrameToScroll, animated: true)
         scrollTabMenu(to: page)
     }
