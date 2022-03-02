@@ -24,6 +24,7 @@ protocol WebViewHandlerDelegate{
 }
 
 struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
+    
     func receivedJsonValueFromWebView(value: [String : Any?]) {
         
     }
@@ -32,18 +33,14 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         
     }
     
-    
     var urlType: WebUrl
-    
     @ObservedObject var viewModel: ViewModel
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
-    
     func makeUIView(context: Context) -> WKWebView {
-        
         
         // Enable javascript in WKWebView to interact with the web app
         let preferences = WKPreferences()
@@ -150,7 +147,6 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
             decisionHandler(.allow)
         }
     }
-    
 }
 
 extension WebView.Coordinator: WKScriptMessageHandler {
@@ -169,8 +165,8 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         guard let theJSONData = try? JSONSerialization.data(
             withJSONObject: dictionary,
             options: []) else {
-            return ""
-        }
+                return ""
+            }
         let base64Encoded = theJSONData.base64EncodedString()
         return base64Encoded
     }
@@ -179,7 +175,7 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         struct Keys {
             static let trendingSearchSection = "trendingSearchSection"
         }
-
+        
         var dict1 = ["book_name": "",
                      "chapter_name": "",
                      "grade": "Standard XII",
@@ -207,12 +203,9 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         }
         
         let trendingSearchDetails = ["trending_search": [dict2]]
-       
+        
         var realtimeSearchPageDictinary: [String: Any] = [:]
         realtimeSearchPageDictinary[Keys.trendingSearchSection] = trendingSearchDetails
         return realtimeSearchPageDictinary
-
     }
-
 }
-

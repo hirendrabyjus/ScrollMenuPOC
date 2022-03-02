@@ -23,12 +23,11 @@ enum RevisionPageWebEvent: String, CaseIterable, JSEvent {
 protocol JSHandlerProtocol: AnyObject{
     func bookMarkTapped()
 }
-class JSHandler: NSObject, WKScriptMessageHandler{
+
+class JSHandler: NSObject, WKScriptMessageHandler {
     
-     var delegate: JSHandlerProtocol?
+    var delegate: JSHandlerProtocol?
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
     }
-    
-    
 }
