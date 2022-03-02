@@ -1,0 +1,42 @@
+
+.gridButton {
+  position: relative;
+  padding: 8px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  border: none;
+  color: black;
+  font-size: 13px;
+  font-family: BOOK_FONT;
+  background-color: white;
+}
+
+.gridButton p {
+margin-top: 0px;
+margin-bottom: 0px;
+text-align: left;
+}
+
+.headerTitle {
+    font-size: 11px;
+    font-family: BOOK_FONT;
+    color:#666666;
+}
+
+.chapterName {
+    font-size: 11px;
+    font-family: BOOK_FONT;
+    color:#666666;
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+.horizontalLine {
+    height: 0.5px;
+    background-color: #666666;
+    border: none;
+}
+
+
