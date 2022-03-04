@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct Data: Hashable,CustomStringConvertible {
+struct Data: Hashable,CustomStringConvertible,Identifiable {
     var description: String {
         return url
     }
@@ -25,27 +25,16 @@ struct ContentView: View {
         VStack{
             GeometryReader{ geometry in
                 ZStack{
-                    ForEach(viewModel.cardViews) { cardView in
-                        cardView
-                            .zIndex(viewModel.isTopCard(cardView) ? 1 : 0)
+                    ForEach(viewModel.cardViewDatas) { data in
+                        CardView(data: data, onRemove: {
+                            viewModel.moveCards(true)
+                        })
+                            .zIndex(viewModel.isTopCard(data) ? 1 : 0)
                             .animation(.interpolatingSpring(stiffness: 120, damping: 120))
-                            .frame(width: viewModel.getCardWidth(geometry, id: viewModel.isTopCard(cardView) ? 0 : 1), height: 400)
-                            .offset(x: viewModel.isTopCard(cardView) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: viewModel.isTopCard(cardView) ? 0 : 1))
-                            .rotationEffect(Angle(degrees: viewModel.isTopCard(cardView) ?(Double(viewModel.translation.width / geometry.size.width) * 25): 0), anchor: .bottom)
-                            .gesture(
-                                DragGesture()
-                                    .onChanged{ value in
-                                        viewModel.translation = value.translation
-                                    }
-                                    .onEnded{ value in
-                                        if abs(viewModel.getGesturePercentage(geometry, from: value)) > viewModel.thresholdPercentage {
-                                            viewModel.moveCards(true)
-                                            viewModel.translation = .zero
-                                        } else {
-                                            viewModel.translation = .zero
-                                        }
-                                    }
-                            )
+                            .frame(width: viewModel.getCardWidth(geometry, id: viewModel.isTopCard(data) ? 0 : 1), height: 400)
+                            .offset(x: viewModel.isTopCard(data) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: viewModel.isTopCard(data) ? 0 : 1))
+                            .rotationEffect(Angle(degrees: viewModel.isTopCard(data) ?(Double(viewModel.translation.width / geometry.size.width) * 25): 0), anchor: .bottom)
+                            
                     }
                 }
                 Spacer()
@@ -55,6 +44,7 @@ struct ContentView: View {
                 Button("Previous", action: {
                     viewModel.moveCards(false)
                 })
+                    .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
                 
             }
         }.padding()

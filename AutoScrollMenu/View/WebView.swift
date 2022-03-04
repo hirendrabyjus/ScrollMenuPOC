@@ -54,14 +54,14 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
-        webView.scrollView.isScrollEnabled = true
+        webView.scrollView.isScrollEnabled = false
         return webView
     }
     
     func updateUIView(_ webView: WebView.UIViewType, context: UIViewRepresentableContext<WebView>) {
         if urlType == .localUrl {
             // Load local website
-            if let url = Bundle.main.url(forResource: "TrendingSearch", withExtension: "html") {
+            if let url = Bundle.main.url(forResource: "Revision", withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
         } else if urlType == .publicUrl {
