@@ -8,12 +8,9 @@
 import SwiftUI
 import CoreData
 
-struct Data: Hashable,CustomStringConvertible,Identifiable {
-    var description: String {
-        return url
-    }
-    var url: String
-    var id : Int
+struct Data: Hashable,Identifiable {
+    var mathjaxContent: String
+    var id: Int
 }
 
 struct ContentView: View {
@@ -34,7 +31,6 @@ struct ContentView: View {
                             .frame(width: viewModel.getCardWidth(geometry, id: viewModel.isTopCard(data) ? 0 : 1), height: 400)
                             .offset(x: viewModel.isTopCard(data) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: viewModel.isTopCard(data) ? 0 : 1))
                             .rotationEffect(Angle(degrees: viewModel.isTopCard(data) ?(Double(viewModel.translation.width / geometry.size.width) * 25): 0), anchor: .bottom)
-                            
                     }
                 }
                 Spacer()
@@ -45,7 +41,6 @@ struct ContentView: View {
                     viewModel.moveCards(false)
                 })
                     .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
-                
             }
         }.padding()
     }

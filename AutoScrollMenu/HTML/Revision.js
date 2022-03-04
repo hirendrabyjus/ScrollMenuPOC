@@ -126,15 +126,15 @@ function realtimeSearchQuestions(questions) {
     containerView.innerHTML = output;
 }
 
-function displayTrendingSearch(questionsJsonEncodes) {
+function displayRevisions(questionsJsonEncodes) {
     try {
         
         var questionsJSON = JSON.parse(atob(questionsJsonEncodes));
-        if (questionsJSON.trendingSearchSection) {
-            var trendingSearch = questionsJSON.trendingSearchSection
+        if (questionsJSON.trendingRevisionSection) {
+            var trendingSearch = questionsJSON.trendingRevisionSection
             if (trendingSearch.trending_search) {
                 if (trendingSearch.trending_search.length > 0) {
-                    realtimeSearchPageData["trendingSearchSection"] = trendingSearch
+                    realtimeSearchPageData["trendingRevisionSection"] = trendingSearch
                     realtimeSearchQuestions(trendingSearch)
                 }
             }
@@ -145,7 +145,7 @@ function displayTrendingSearch(questionsJsonEncodes) {
 
 function realtimeSearchQuestionTapped(questionIndex) {
     var realtimeSearchArray = [];
-    realtimeSearchArray = realtimeSearchPageData.trendingSearchSection.trending_search
+    realtimeSearchArray = realtimeSearchPageData.trendingRevisionSection.trending_search
     
     var question = realtimeSearchArray[questionIndex]
     var dataDictionary = {

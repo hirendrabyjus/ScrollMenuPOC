@@ -155,6 +155,7 @@
 		685DCAE227C3A9FB0002B6BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ED1FE7AE27CF6FAF009E86D3 /* ViewModel */,
 				ED1FE7B327CF6FCF009E86D3 /* ContentView.swift */,
 				ED1FE7B727CF6FD9009E86D3 /* CardView.swift */,
 				ED1FE7B527CF6FD4009E86D3 /* WebView.swift */,
@@ -182,7 +183,6 @@
 		68E8534327C3810B000FFBA1 /* AutoScrollMenu */ = {
 			isa = PBXGroup;
 			children = (
-				ED1FE7AE27CF6FAF009E86D3 /* ViewModel */,
 				68E8534427C3810B000FFBA1 /* AppDelegate.swift */,
 				68E8534627C3810B000FFBA1 /* SceneDelegate.swift */,
 				685DCAE127C3A9EE0002B6BE /* Scene */,
@@ -190,16 +190,24 @@
 				685DCAD027C3A29A0002B6BE /* Utility */,
 				685DCACD27C397EC0002B6BE /* Custom Classes */,
 				68E8534D27C3810D000FFBA1 /* Assets.xcassets */,
-				ED1FE79F27CF6F24009E86D3 /* Revision.css */,
-				ED1FE7A127CF6F84009E86D3 /* Revision.html */,
-				ED1FE7A327CF6F8C009E86D3 /* Revision.js */,
-				ED1FE7A527CF6F94009E86D3 /* mathjax.css */,
+				68F5FA2927D1D56300A8151C /* HTML */,
 				68E8534F27C3810D000FFBA1 /* LaunchScreen.storyboard */,
 				ED1FE7A727CF6F99009E86D3 /* Persistence.swift */,
 				ED1FE7A927CF6F9E009E86D3 /* stackview.xcdatamodeld */,
 				68E8535227C3810D000FFBA1 /* Info.plist */,
 			);
 			path = AutoScrollMenu;
+			sourceTree = "<group>";
+		};
+		68F5FA2927D1D56300A8151C /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				ED1FE79F27CF6F24009E86D3 /* Revision.css */,
+				ED1FE7A127CF6F84009E86D3 /* Revision.html */,
+				ED1FE7A327CF6F8C009E86D3 /* Revision.js */,
+				ED1FE7A527CF6F94009E86D3 /* mathjax.css */,
+			);
+			path = HTML;
 			sourceTree = "<group>";
 		};
 		ED1FE7AE27CF6FAF009E86D3 /* ViewModel */ = {

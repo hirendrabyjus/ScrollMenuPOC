@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 
 enum RevisionPagePageJSFunctions: String, JavascriptFuntionConvertible {
-    case displayTrendingSearch
+    case displayRevisions
     var name: String { return rawValue }
 }
 

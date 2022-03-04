@@ -13,7 +13,7 @@ struct CardView: View, Identifiable{
     @State var translation: CGSize = .zero
     private var onRemove: () -> ()
     var id = UUID()
-    private var data:  Data
+    private var data: Data
     
     init(data: Data, onRemove: @escaping () -> Void) {
         self.data = data
@@ -30,7 +30,6 @@ struct CardView: View, Identifiable{
                 WebView(urlType: .localUrl, viewModel: viewModel)
                     .background(.white)
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
-                
             }
             /// Existing View Modifier
             .animation(.interactiveSpring())
@@ -59,7 +58,7 @@ struct CardView: View, Identifiable{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(data: Data(url: "https://www.google.com", id: 0), onRemove: {
+        CardView(data: Data(mathjaxContent: "https://www.google.com", id: 0), onRemove: {
             
         })
             .frame(height: 400)
