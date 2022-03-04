@@ -33,9 +33,10 @@ struct CardView: View, Identifiable{
                 
             }
             /// Existing View Modifier
-            .shadow(radius: 5)
             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: 0) // 2
+            .cornerRadius(8)
+            .shadow(radius: 8)
             .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
             .gesture(
                 // 3
