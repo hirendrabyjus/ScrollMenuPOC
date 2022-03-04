@@ -27,14 +27,15 @@ struct CardView: View, Identifiable{
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                WebView(urlType: .localUrl, viewModel: viewModel)
-                    .background(.white)
+                WebView(urlType: .localUrl, viewModel: viewModel, data: self.data)
+                    .background(.gray)
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
             }
             /// Existing View Modifier
+            
             .animation(.interactiveSpring())
             .offset(x: self.translation.width, y: 0) // 2
-            .cornerRadius(8)
+            .cornerRadius(12)
             .shadow(radius: 8)
             .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
             .gesture(

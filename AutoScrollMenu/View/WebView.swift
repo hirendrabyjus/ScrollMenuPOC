@@ -35,6 +35,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     
     var urlType: WebUrl
     @ObservedObject var viewModel: ViewModel
+    var data: Data
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -179,7 +180,7 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         var dict = ["book_name": "",
                      "chapter_name": "",
                      "grade": "Standard XII",
-                     "mathjax_question": "1. If the distribution of molecular speeds of gas is as per the figure shown below, then the ratio of the most probable, the average, and the root mean square speeds, respectively, is:<img alt=\"\" height=\"322\" src=\"https://df0b18phdhzpx.cloudfront.net/ckeditor_assets/pictures/1208279/original_28-10.png\" width=\"308\" data-src=\"\">",
+                    "mathjax_question": self.parent.data.mathjaxContent,
                      "qid": 672857,
                      "question": "<p>What is actually GDP ?</p>",
                      "raw_grade": 12,
