@@ -56,6 +56,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = false
+        webView.backgroundColor = .clear
         return webView
     }
     
@@ -174,7 +175,7 @@ extension WebView.Coordinator: WKScriptMessageHandler {
     
     private func loadParamsInToWebView() -> [String : Any] {
         struct Keys {
-            static let trendingRevisionSection = "trendingRevisionSection"
+            static let revisionSection = "revisionSection"
         }
         
         var dict = ["book_name": "",
@@ -193,7 +194,7 @@ extension WebView.Coordinator: WKScriptMessageHandler {
         let trendingSearchDetails = ["trending_search": [dict]]
         
         var realtimeSearchPageDictinary: [String: Any] = [:]
-        realtimeSearchPageDictinary[Keys.trendingRevisionSection] = trendingSearchDetails
+        realtimeSearchPageDictinary[Keys.revisionSection] = trendingSearchDetails
         return realtimeSearchPageDictinary
     }
 }

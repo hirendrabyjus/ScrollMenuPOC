@@ -43,7 +43,7 @@ struct ContentView: View {
                     .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
             }
         }.padding()
-            .background(.red)
+            .background(.white)
     }
 }
 

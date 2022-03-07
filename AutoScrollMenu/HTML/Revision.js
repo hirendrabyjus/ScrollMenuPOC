@@ -1,4 +1,4 @@
-var trendingSearch = {
+var revisions = {
     "trending_search": [
         {
             "book_name": "",
@@ -110,15 +110,15 @@ var trendingSearch = {
     }
 }
 
-var realtimeSearchPageData = {};
+var revisionPageData = {};
 var containerView = document.getElementById('containerView');
 var id = 0;
 
-function realtimeSearchQuestions(questions) {
+function revisionDetails(questions) {
     var output = containerView.innerHTML;
     if (questions.trending_search.length != 0) {
         for (let index = 0; index < questions.trending_search.length; index++) {
-            output += '<button onclick="realtimeSearchQuestionTapped('+id+')" class="gridButton"><div style="color:black; text-align:center;">' + decodeURIComponent(questions.trending_search[index].mathjax_question) + '</div></button>'
+            output += '<button onclick="revisionTapped('+id+')" class="gridButton"><div style="color:black;text-align:center;">' + decodeURIComponent(questions.trending_search[index].mathjax_question) + '</div></button>'
             id += 1
             console.log(id)
         }
@@ -128,14 +128,13 @@ function realtimeSearchQuestions(questions) {
 
 function displayRevisions(questionsJsonEncodes) {
     try {
-        
         var questionsJSON = JSON.parse(atob(questionsJsonEncodes));
-        if (questionsJSON.trendingRevisionSection) {
-            var trendingSearch = questionsJSON.trendingRevisionSection
-            if (trendingSearch.trending_search) {
-                if (trendingSearch.trending_search.length > 0) {
-                    realtimeSearchPageData["trendingRevisionSection"] = trendingSearch
-                    realtimeSearchQuestions(trendingSearch)
+        if (questionsJSON.revisionSection) {
+            var revisions = questionsJSON.revisionSection
+            if (revisions.trending_search) {
+                if (revisions.trending_search.length > 0) {
+                    revisionPageData["revisionSection"] = revisions
+                    revisionDetails(revisions)
                 }
             }
         }
@@ -143,16 +142,16 @@ function displayRevisions(questionsJsonEncodes) {
 }
 
 
-function realtimeSearchQuestionTapped(questionIndex) {
-    var realtimeSearchArray = [];
-    realtimeSearchArray = realtimeSearchPageData.trendingRevisionSection.trending_search
+function revisionTapped(questionIndex) {
+    var revisionArray = [];
+    revisionArray = revisionPageData.revisionSection.trending_search
     
-    var question = realtimeSearchArray[questionIndex]
+    var question = revisionArray[questionIndex]
     var dataDictionary = {
         'question': question.question,
         'qid': question.qid,
         'index': questionIndex
     }
     if ('webkit' in window)
-        webkit.messageHandlers.realtimeSearchQuestionTapped.postMessage(dataDictionary);
+        webkit.messageHandlers.revisionTapped.postMessage(dataDictionary);
 }

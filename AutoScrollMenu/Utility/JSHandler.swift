@@ -14,7 +14,7 @@ enum RevisionPagePageJSFunctions: String, JavascriptFuntionConvertible {
 }
 
 enum RevisionPageWebEvent: String, CaseIterable, JSEvent {
-    case realtimeSearchQuestionTapped
+    case revisionTapped
     var name: String {
         return self.rawValue
     }
