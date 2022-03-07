@@ -13,7 +13,7 @@ class ContentViewController: UIViewController {
     }
     
     func addSwiftUIView() {
-        let swiftUIView = ContentView()
+        let swiftUIView = StackView()
         let hostingController = UIHostingController(rootView: swiftUIView)
         
         addChild(hostingController)

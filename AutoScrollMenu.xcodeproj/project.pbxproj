@@ -32,9 +32,9 @@
 		ED1FE7A827CF6F99009E86D3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7A727CF6F99009E86D3 /* Persistence.swift */; };
 		ED1FE7AB27CF6F9E009E86D3 /* stackview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7A927CF6F9E009E86D3 /* stackview.xcdatamodeld */; };
 		ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7AC27CF6FA9009E86D3 /* JSHandler.swift */; };
-		ED1FE7B027CF6FBD009E86D3 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7AF27CF6FBD009E86D3 /* ContentView-ViewModel.swift */; };
+		ED1FE7B027CF6FBD009E86D3 /* StackView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7AF27CF6FBD009E86D3 /* StackView-ViewModel.swift */; };
 		ED1FE7B227CF6FC2009E86D3 /* WebView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B127CF6FC2009E86D3 /* WebView-ViewModel.swift */; };
-		ED1FE7B427CF6FCF009E86D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B327CF6FCF009E86D3 /* ContentView.swift */; };
+		ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B327CF6FCF009E86D3 /* StackView.swift */; };
 		ED1FE7B627CF6FD4009E86D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B527CF6FD4009E86D3 /* WebView.swift */; };
 		ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B727CF6FD9009E86D3 /* CardView.swift */; };
 /* End PBXBuildFile section */
@@ -67,9 +67,9 @@
 		ED1FE7A727CF6F99009E86D3 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		ED1FE7AA27CF6F9E009E86D3 /* stackview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = stackview.xcdatamodel; sourceTree = "<group>"; };
 		ED1FE7AC27CF6FA9009E86D3 /* JSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSHandler.swift; sourceTree = "<group>"; };
-		ED1FE7AF27CF6FBD009E86D3 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
+		ED1FE7AF27CF6FBD009E86D3 /* StackView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StackView-ViewModel.swift"; sourceTree = "<group>"; };
 		ED1FE7B127CF6FC2009E86D3 /* WebView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebView-ViewModel.swift"; sourceTree = "<group>"; };
-		ED1FE7B327CF6FCF009E86D3 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED1FE7B327CF6FCF009E86D3 /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		ED1FE7B527CF6FD4009E86D3 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		ED1FE7B727CF6FD9009E86D3 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1FE7AE27CF6FAF009E86D3 /* ViewModel */,
-				ED1FE7B327CF6FCF009E86D3 /* ContentView.swift */,
+				ED1FE7B327CF6FCF009E86D3 /* StackView.swift */,
 				ED1FE7B727CF6FD9009E86D3 /* CardView.swift */,
 				ED1FE7B527CF6FD4009E86D3 /* WebView.swift */,
 				68E8534A27C3810B000FFBA1 /* Main.storyboard */,
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1FE7B127CF6FC2009E86D3 /* WebView-ViewModel.swift */,
-				ED1FE7AF27CF6FBD009E86D3 /* ContentView-ViewModel.swift */,
+				ED1FE7AF27CF6FBD009E86D3 /* StackView-ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -306,9 +306,9 @@
 				ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */,
 				ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */,
 				68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */,
-				ED1FE7B427CF6FCF009E86D3 /* ContentView.swift in Sources */,
+				ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */,
 				685DCACF27C399B30002B6BE /* ColorConstants.swift in Sources */,
-				ED1FE7B027CF6FBD009E86D3 /* ContentView-ViewModel.swift in Sources */,
+				ED1FE7B027CF6FBD009E86D3 /* StackView-ViewModel.swift in Sources */,
 				685DCAC727C383580002B6BE /* PagerVC.swift in Sources */,
 				68E8534527C3810B000FFBA1 /* AppDelegate.swift in Sources */,
 				68E8534727C3810B000FFBA1 /* SceneDelegate.swift in Sources */,

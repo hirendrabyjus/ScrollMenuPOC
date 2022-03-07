@@ -13,7 +13,7 @@ struct Data: Hashable,Identifiable {
     var id: Int
 }
 
-struct ContentView: View {
+struct StackView: View {
     
     @StateObject private var viewModel = ViewModel()
     var maxVisibleCards: Int = 3
@@ -37,11 +37,38 @@ struct ContentView: View {
             }
             
             HStack{
-                Button("Previous", action: {
-                    viewModel.moveCards(false)
+                HStack{
+                    Button(action: {
+                        viewModel.moveCards(false)
+                            }) {
+                                Image("previous")
+                                .resizable()
+                                .frame(width: 16, height: 16, alignment: .leading)
+                                
+                            }
+                            
+                    Text("Previous")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(Color.init(hex: "#8f8f8f"))
+                    
+                }
+                .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
+
+                Spacer()
+                HStack {
+                    Text("\(viewModel.lastCardIndex)\(Text("/\(String(StackView.ViewModel.datas.count))").foregroundColor(Color.init(hex: "#444444")))")
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.init(hex: "#c7c7c7"))
+                }
+                .offset(x: -20, y: 0)
+                    
+                Spacer()
+                Button("View all", action: {
                 })
-                    .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
+                    .foregroundColor(Color.init(hex: "#ffb700"))
+                    .font(.system(size: 14, weight: .medium))
             }
+            .padding()
         }.padding()
             .background(.white)
     }
@@ -49,6 +76,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView( maxVisibleCards: 3).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        StackView( maxVisibleCards: 3).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
