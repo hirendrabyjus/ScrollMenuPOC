@@ -1,15 +1,16 @@
 
 .gridButton {
-    position: relative;
-    padding: 8px;
-    text-align: left;
+    position: absolute;
     text-decoration: none;
     display: inline-block;
+    max-height: 92%;
     font-size: 13px;
     border: none;
     color: black;
-    font-size: 13px;
     font-family: BOOK_FONT;
+    left: 10px;
+    right: 10px;
+    top: 10px;
     background-color: #f6f6f6;
 }
 
