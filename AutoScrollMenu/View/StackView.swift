@@ -24,7 +24,9 @@ struct StackView: View {
                 ZStack{
                     ForEach(viewModel.cardViewDatas) { data in
                         CardView(data: data, onRemove: {
+                            if viewModel.lastCardIndex < StackView.ViewModel.datas.count{
                             viewModel.moveCards(true)
+                            }
                         })
                             .zIndex(viewModel.isTopCard(data) ? 1 : 0)
                             .animation(.interpolatingSpring(stiffness: 120, damping: 120))

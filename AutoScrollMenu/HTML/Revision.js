@@ -141,7 +141,6 @@ function displayRevisions(questionsJsonEncodes) {
     } catch(e) {}
 }
 
-
 function revisionTapped(questionIndex) {
     var revisionArray = [];
     revisionArray = revisionPageData.revisionSection.trending_search
