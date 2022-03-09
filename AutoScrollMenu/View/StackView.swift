@@ -11,6 +11,7 @@ import CoreData
 struct Data: Hashable,Identifiable {
     var mathjaxContent: String
     var id: Int
+    var type: String?
 }
 
 struct StackView: View {
@@ -24,7 +25,7 @@ struct StackView: View {
             GeometryReader{ geometry in
                 ZStack{
                     ForEach(viewModel.cardViewDatas) { data in
-                        CardView(data: data, dataCount: StackView.ViewModel.datas.count, onRemove: {
+                        CardView(data: [data], dataCount: StackView.ViewModel.datas.count, onRemove: {
                             if viewModel.lastCardIndex < StackView.ViewModel.datas.count{
                             viewModel.moveCards(true)
                             }

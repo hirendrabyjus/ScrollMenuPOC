@@ -26,6 +26,7 @@
 		68E8534E27C3810D000FFBA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534D27C3810D000FFBA1 /* Assets.xcassets */; };
 		68E8535127C3810D000FFBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534F27C3810D000FFBA1 /* LaunchScreen.storyboard */; };
 		68F5FA2C27D7429F00A8151C /* RevisionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */; };
+		68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */; };
 		ED1FE7A027CF6F24009E86D3 /* Revision.css in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE79F27CF6F24009E86D3 /* Revision.css */; };
 		ED1FE7A227CF6F84009E86D3 /* Revision.html in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A127CF6F84009E86D3 /* Revision.html */; };
 		ED1FE7A427CF6F8C009E86D3 /* Revision.js in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A327CF6F8C009E86D3 /* Revision.js */; };
@@ -62,6 +63,7 @@
 		68E8535027C3810D000FFBA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68E8535227C3810D000FFBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionListVC.swift; sourceTree = "<group>"; };
+		68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisonListViewModel.swift; sourceTree = "<group>"; };
 		ED1FE79F27CF6F24009E86D3 /* Revision.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Revision.css; sourceTree = "<group>"; };
 		ED1FE7A127CF6F84009E86D3 /* Revision.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Revision.html; sourceTree = "<group>"; };
 		ED1FE7A327CF6F8C009E86D3 /* Revision.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Revision.js; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */,
+				68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */,
 			);
 			path = "Revision List";
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */,
 				68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */,
 				ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */,
+				68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */,
 				685DCACF27C399B30002B6BE /* ColorConstants.swift in Sources */,
 				ED1FE7B027CF6FBD009E86D3 /* StackView-ViewModel.swift in Sources */,
 				68F5FA2C27D7429F00A8151C /* RevisionListVC.swift in Sources */,

@@ -15,12 +15,10 @@ class ContentViewController: UIViewController {
     func addSwiftUIView() {
         let swiftUIView = StackView()
         let hostingController = UIHostingController(rootView: swiftUIView)
-        
         hostingController.rootView.viewAllButtonPressed = {
-            let vc = RevisionListVC()
-            self.navigationController?.pushViewController(vc, animated: false)
+            let revisonList = Storyboard.main.instantiateVC(RevisionListVC.self)
+            self.navigationController?.pushViewController(revisonList, animated: false)
         }
-        
         addChild(hostingController)
         view.addSubview(hostingController.view)
         
@@ -31,11 +29,7 @@ class ContentViewController: UIViewController {
                 view.bottomAnchor.constraint(equalTo: hostingController.view.bottomAnchor),
                 view.rightAnchor.constraint(equalTo: hostingController.view.rightAnchor)
             ]
-
             NSLayoutConstraint.activate(constraints)
-
-            /// Notify the hosting controller that it has been moved to the current view controller.
             hostingController.didMove(toParent: self)
-        
     }
 }
