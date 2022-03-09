@@ -18,7 +18,7 @@ public protocol JavascriptFuntionConvertible {
     var name: String { get }
 }
 
-protocol WebViewHandlerDelegate{
+protocol WebViewHandlerDelegate {
     func receivedJsonValueFromWebView(value: [String: Any?])
     func receivedStringValueFromWebView(value: String)
 }
