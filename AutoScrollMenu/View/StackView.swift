@@ -23,7 +23,7 @@ struct StackView: View {
             GeometryReader{ geometry in
                 ZStack{
                     ForEach(viewModel.cardViewDatas) { data in
-                        CardView(data: data, onRemove: {
+                        CardView(data: data, dataCount: StackView.ViewModel.datas.count, onRemove: {
                             if viewModel.lastCardIndex < StackView.ViewModel.datas.count{
                             viewModel.moveCards(true)
                             }
@@ -32,7 +32,6 @@ struct StackView: View {
                             .animation(.interpolatingSpring(stiffness: 120, damping: 120))
                             .frame(width: viewModel.getCardWidth(geometry, id: viewModel.isTopCard(data) ? 0 : 1), height: 400)
                             .offset(x: viewModel.isTopCard(data) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: viewModel.isTopCard(data) ? 0 : 1))
-                            .rotationEffect(Angle(degrees: viewModel.isTopCard(data) ?(Double(viewModel.translation.width / geometry.size.width) * 25): 0), anchor: .bottom)
                     }
                 }
                 Spacer()
@@ -40,14 +39,16 @@ struct StackView: View {
             
             HStack{
                 HStack{
-                    Button(action: {
-                        viewModel.moveCards(false)
+                Button(action: {
+                    viewModel.moveCards(false)
                             }) {
+                                
                                 Image("previous")
                                 .resizable()
-                                .frame(width: 16, height: 16, alignment: .leading)
+                                .renderingMode(.original)
                                 
-                            }
+                }
+                            .frame(width: 16, height: 16, alignment: .leading)
                             
                     Text("Previous")
                         .font(.system(size: 14, weight: .medium))

@@ -14,9 +14,11 @@ struct CardView: View, Identifiable{
     private var onRemove: () -> ()
     var id = UUID()
     private var data: Data
+    private var dataCount: Int
     
-    init(data: Data, onRemove: @escaping () -> Void) {
+    init(data: Data,dataCount: Int, onRemove: @escaping () -> Void) {
         self.data = data
+        self.dataCount = dataCount
         self.onRemove = onRemove
     }
     
@@ -53,6 +55,7 @@ struct CardView: View, Identifiable{
                         }
                     }
             )
+            .disabled(data.id == dataCount - 1 ? true: false)
         }
     }
 }
@@ -60,7 +63,7 @@ struct CardView: View, Identifiable{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(data: Data(mathjaxContent: "https://www.google.com", id: 0), onRemove: {
+        CardView(data: Data(mathjaxContent: "https://www.google.com", id: 0),dataCount: 0, onRemove: {
             
         })
             .frame(height: 400)
