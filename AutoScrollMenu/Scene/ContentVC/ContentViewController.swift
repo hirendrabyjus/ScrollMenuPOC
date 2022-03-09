@@ -16,6 +16,11 @@ class ContentViewController: UIViewController {
         let swiftUIView = StackView()
         let hostingController = UIHostingController(rootView: swiftUIView)
         
+        hostingController.rootView.viewAllButtonPressed = {
+            let vc = RevisionListVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         addChild(hostingController)
         view.addSubview(hostingController.view)
         

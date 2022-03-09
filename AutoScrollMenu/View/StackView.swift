@@ -17,6 +17,7 @@ struct StackView: View {
     
     @StateObject private var viewModel = ViewModel()
     var maxVisibleCards: Int = 3
+    var viewAllButtonPressed: (() -> Void)?
     
     var body: some View {
         VStack{
@@ -67,6 +68,7 @@ struct StackView: View {
                     
                 Spacer()
                 Button("View all", action: {
+                    self.viewAllButtonPressed?()
                 })
                     .foregroundColor(Color.init(hex: "#ffb700"))
                     .font(.system(size: 14, weight: .medium))
