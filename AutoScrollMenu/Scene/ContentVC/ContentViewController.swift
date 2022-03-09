@@ -18,7 +18,7 @@ class ContentViewController: UIViewController {
         
         hostingController.rootView.viewAllButtonPressed = {
             let vc = RevisionListVC()
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: false)
         }
         
         addChild(hostingController)
