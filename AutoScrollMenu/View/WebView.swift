@@ -35,7 +35,8 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     
     var urlType: WebUrl
     @ObservedObject var viewModel: ViewModel
-    var data: Data
+    var data: [Data]
+    let jsMessageHandler: JSHandler
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -52,10 +53,27 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         configuration.userContentController.add(self.makeCoordinator(), name: "iOSNative")
         configuration.preferences = preferences
         
+        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog; window.console.error = captureLog;"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+
+        let wkUserController = WKUserContentController()
+        wkUserController.addUserScript(script)
+        configuration.userContentController = wkUserController
+        
+        for event in RevisionPageWebEvent.allCases {
+            wkUserController.add(self.jsMessageHandler, name: event.name)
+        }
+        wkUserController.add(self.jsMessageHandler, name: "logHandler")
+        
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
-        webView.scrollView.isScrollEnabled = false
+        
+        if data.first?.type == "RevisionList" {
+            webView.scrollView.isScrollEnabled = true
+        } else {
+            webView.scrollView.isScrollEnabled = false
+        }
         webView.backgroundColor = .clear
         return webView
     }
@@ -178,23 +196,23 @@ extension WebView.Coordinator: WKScriptMessageHandler {
             static let revisionSection = "revisionSection"
         }
         
-        var dict = ["book_name": "",
-                     "chapter_name": "",
-                     "grade": "Standard XII",
-                    "mathjax_question": self.parent.data.mathjaxContent,
-                     "qid": 672857,
-                     "question": "<p>What is actually GDP ?</p>",
-                     "raw_grade": 12,
-                     "subject": "Biology"] as [String : Any]
-        
-        if let value = dict["mathjax_question"] as? String {
-            dict["mathjax_question"] = value.encodeSpecialCharacters()
+        var revisionDetails: [Any] = [Any]()
+        for obj in self.parent.data {
+            var dict = ["type": obj.type ?? "",
+                        "qid": "\(obj.id)",
+                        "mathjax_question": obj.mathjaxContent,
+            ] as [String : Any]
+            
+            if let value = dict["mathjax_question"] as? String {
+                dict["mathjax_question"] = value.encodeSpecialCharacters()
+            }
+            revisionDetails.append(dict)
         }
-    
-        let trendingSearchDetails = ["trending_search": [dict]]
         
-        var realtimeSearchPageDictinary: [String: Any] = [:]
-        realtimeSearchPageDictinary[Keys.revisionSection] = trendingSearchDetails
-        return realtimeSearchPageDictinary
+        let revisions = ["trending_search": revisionDetails]
+        
+        var revisionsDictinary: [String: Any] = [:]
+        revisionsDictinary[Keys.revisionSection] = revisions
+        return revisionsDictinary
     }
 }

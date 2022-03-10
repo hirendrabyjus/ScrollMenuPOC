@@ -13,11 +13,12 @@ struct CardView: View, Identifiable{
     @State var translation: CGSize = .zero
     private var onRemove: () -> ()
     var id = UUID()
-    private var data: Data
+    private var data =  [Data]()
     private var dataCount: Int
+    private let jsMessageHandler = JSHandler()
     
     init(data: Data,dataCount: Int, onRemove: @escaping () -> Void) {
-        self.data = data
+        self.data.append(data)
         self.dataCount = dataCount
         self.onRemove = onRemove
     }
@@ -29,7 +30,7 @@ struct CardView: View, Identifiable{
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                WebView(urlType: .localUrl, viewModel: viewModel, data: self.data)
+                WebView(urlType: .localUrl, viewModel: viewModel, data: self.data, jsMessageHandler: jsMessageHandler)
                     .background(Color.init(hex: "#f6f6f6"))
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
             }
@@ -55,7 +56,7 @@ struct CardView: View, Identifiable{
                         }
                     }
             )
-            .disabled(data.id == dataCount - 1 ? true: false)
+            .disabled(data[0].id == dataCount - 1 ? true: false)
         }
     }
 }
