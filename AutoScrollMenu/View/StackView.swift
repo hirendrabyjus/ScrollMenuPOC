@@ -23,16 +23,16 @@ struct StackView: View {
         VStack{
             GeometryReader{ geometry in
                 ZStack{
-                    ForEach(viewModel.cardViewDatas) { data in
+                    ForEach(Array(viewModel.cardViewDatas.enumerated()),id: \.1.id) { (index,data) in
                         CardView(data: data, dataCount: StackView.ViewModel.datas.count, onRemove: {
-                            if viewModel.lastCardIndex < StackView.ViewModel.datas.count{
+                            if viewModel.lastCardIndex - 1 < StackView.ViewModel.datas.count{
                             viewModel.moveCards(true)
                             }
                         })
-                            .zIndex(viewModel.isTopCard(data) ? 1 : 0)
+                            .zIndex(Double((viewModel.cardViewDatas.count - 1) - index))
                             .animation(.interpolatingSpring(stiffness: 120, damping: 120))
-                            .frame(width: viewModel.getCardWidth(geometry, id: viewModel.isTopCard(data) ? 0 : 1), height: 400)
-                            .offset(x: viewModel.isTopCard(data) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: viewModel.isTopCard(data) ? 0 : 1))
+                            .frame(width: viewModel.getCardWidth(geometry, id: index), height: 400)
+                            .offset(x: viewModel.isTopCard(data) ?viewModel.translation.width : 0, y: viewModel.getCardOffset(geometry, id: index))
                     }
                 }
                 Spacer()
@@ -56,11 +56,11 @@ struct StackView: View {
                         .foregroundColor(Color.init(hex: "#8f8f8f"))
                     
                 }
-                .opacity(viewModel.lastCardIndex == 1 ? 0: 1)
+                .opacity(viewModel.lastCardIndex == 2 ? 0: 1)
 
                 Spacer()
                 HStack {
-                    Text("\(viewModel.lastCardIndex)\(Text("/\(String(StackView.ViewModel.datas.count))").foregroundColor(Color.init(hex: "#444444")))")
+                    Text("\(viewModel.lastCardIndex - 1)\(Text("/\(String(StackView.ViewModel.datas.count))").foregroundColor(Color.init(hex: "#444444")))")
                         .font(.system(size: 14))
                         .foregroundColor(Color.init(hex: "#c7c7c7"))
                 }
