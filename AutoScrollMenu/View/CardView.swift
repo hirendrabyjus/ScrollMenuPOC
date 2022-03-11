@@ -13,11 +13,11 @@ struct CardView: View, Identifiable{
     @State var translation: CGSize = .zero
     private var onRemove: () -> ()
     var id = UUID()
-    private var data =  [Data]()
+    private var data =  [RevisionData]()
     private var dataCount: Int
     private let jsMessageHandler = JSHandler()
     
-    init(data: Data,dataCount: Int, onRemove: @escaping () -> Void) {
+    init(data: RevisionData,dataCount: Int, onRemove: @escaping () -> Void) {
         self.data.append(data)
         self.dataCount = dataCount
         self.onRemove = onRemove
@@ -64,7 +64,7 @@ struct CardView: View, Identifiable{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(data: Data(mathjaxContent: "https://www.google.com", id: 0),dataCount: 0, onRemove: {
+        CardView(data: RevisionData(mathjaxContent: "https://www.google.com", id: 0),dataCount: 0, onRemove: {
             
         })
             .frame(height: 400)

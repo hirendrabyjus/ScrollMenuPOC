@@ -1,0 +1,6 @@
+framework module Pods_AutoScrollMenu {
+  umbrella header "Pods-AutoScrollMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -18,6 +18,12 @@
 		685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */; };
 		685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */; };
 		685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */; };
+		68AF8E2D27DB0BB800868525 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2B27DB0BB700868525 /* ApiManager.swift */; };
+		68AF8E2E27DB0BB800868525 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2C27DB0BB800868525 /* ApiRequest.swift */; };
+		68AF8E3027DB0D4100868525 /* TLReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2F27DB0D4100868525 /* TLReachabilityHelper.swift */; };
+		68AF8E3227DB0DCA00868525 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E3127DB0DCA00868525 /* Reachability.swift */; };
+		68AF8E3427DB10B000868525 /* TLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E3327DB10B000868525 /* TLNetworkManager.swift */; };
+		68AF8E3627DB1F1E00868525 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E3527DB1F1E00868525 /* Constants.swift */; };
 		68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */; };
 		68E8534527C3810B000FFBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534427C3810B000FFBA1 /* AppDelegate.swift */; };
 		68E8534727C3810B000FFBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534627C3810B000FFBA1 /* SceneDelegate.swift */; };
@@ -27,6 +33,7 @@
 		68E8535127C3810D000FFBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534F27C3810D000FFBA1 /* LaunchScreen.storyboard */; };
 		68F5FA2C27D7429F00A8151C /* RevisionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */; };
 		68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */; };
+		DC08B24847B30F940C2EFCA0 /* Pods_AutoScrollMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */; };
 		ED1FE7A027CF6F24009E86D3 /* Revision.css in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE79F27CF6F24009E86D3 /* Revision.css */; };
 		ED1FE7A227CF6F84009E86D3 /* Revision.html in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A127CF6F84009E86D3 /* Revision.html */; };
 		ED1FE7A427CF6F8C009E86D3 /* Revision.js in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A327CF6F8C009E86D3 /* Revision.js */; };
@@ -43,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoScrollMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.release.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.release.xcconfig"; sourceTree = "<group>"; };
 		685DCAC327C383150002B6BE /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		685DCAC527C383580002B6BE /* PagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerVC.swift; sourceTree = "<group>"; };
 		685DCAC627C383580002B6BE /* PagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerVC.xib; sourceTree = "<group>"; };
@@ -54,6 +63,12 @@
 		685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLString+Extension.swift"; sourceTree = "<group>"; };
 		685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLViewController+Extension.swift"; sourceTree = "<group>"; };
+		68AF8E2B27DB0BB700868525 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		68AF8E2C27DB0BB800868525 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		68AF8E2F27DB0D4100868525 /* TLReachabilityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLReachabilityHelper.swift; sourceTree = "<group>"; };
+		68AF8E3127DB0DCA00868525 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		68AF8E3327DB10B000868525 /* TLNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLNetworkManager.swift; sourceTree = "<group>"; };
+		68AF8E3527DB1F1E00868525 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLView+Extentson.swift"; sourceTree = "<group>"; };
 		68E8534127C3810B000FFBA1 /* AutoScrollMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoScrollMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E8534427C3810B000FFBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +80,7 @@
 		68E8535227C3810D000FFBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionListVC.swift; sourceTree = "<group>"; };
 		68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisonListViewModel.swift; sourceTree = "<group>"; };
+		B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.debug.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.debug.xcconfig"; sourceTree = "<group>"; };
 		ED1FE79F27CF6F24009E86D3 /* Revision.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Revision.css; sourceTree = "<group>"; };
 		ED1FE7A127CF6F84009E86D3 /* Revision.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Revision.html; sourceTree = "<group>"; };
 		ED1FE7A327CF6F8C009E86D3 /* Revision.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Revision.js; sourceTree = "<group>"; };
@@ -85,12 +101,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC08B24847B30F940C2EFCA0 /* Pods_AutoScrollMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A35B00DF0139CE9A5F1A070 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */,
+				3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		33A9475F3255722458998918 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		685DCACD27C397EC0002B6BE /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				ED1FE7AC27CF6FA9009E86D3 /* JSHandler.swift */,
-				685DCACE27C399B20002B6BE /* ColorConstants.swift */,
-				685DCAD627C3A6DB0002B6BE /* TLCollectionView+Extension.swift */,
-				685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */,
-				685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */,
-				685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */,
-				68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */,
+				68AF8E3C27DB34F400868525 /* Common Class */,
+				68AF8E3B27DB34CD00868525 /* Extensions */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -171,11 +201,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		68AF8E2A27DB0B1800868525 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				68AF8E2B27DB0BB700868525 /* ApiManager.swift */,
+				68AF8E2C27DB0BB800868525 /* ApiRequest.swift */,
+				68AF8E2F27DB0D4100868525 /* TLReachabilityHelper.swift */,
+				68AF8E3327DB10B000868525 /* TLNetworkManager.swift */,
+			);
+			path = "API Manager";
+			sourceTree = "<group>";
+		};
+		68AF8E3B27DB34CD00868525 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				685DCAD627C3A6DB0002B6BE /* TLCollectionView+Extension.swift */,
+				685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */,
+				685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */,
+				685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */,
+				68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		68AF8E3C27DB34F400868525 /* Common Class */ = {
+			isa = PBXGroup;
+			children = (
+				685DCACE27C399B20002B6BE /* ColorConstants.swift */,
+				68AF8E3527DB1F1E00868525 /* Constants.swift */,
+				68AF8E3127DB0DCA00868525 /* Reachability.swift */,
+			);
+			path = "Common Class";
+			sourceTree = "<group>";
+		};
 		68E8533827C3810B000FFBA1 = {
 			isa = PBXGroup;
 			children = (
 				68E8534327C3810B000FFBA1 /* AutoScrollMenu */,
 				68E8534227C3810B000FFBA1 /* Products */,
+				0A35B00DF0139CE9A5F1A070 /* Pods */,
+				33A9475F3255722458998918 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,8 +262,9 @@
 				685DCAE227C3A9FB0002B6BE /* View */,
 				685DCAD027C3A29A0002B6BE /* Utility */,
 				685DCACD27C397EC0002B6BE /* Custom Classes */,
-				68E8534D27C3810D000FFBA1 /* Assets.xcassets */,
 				68F5FA2927D1D56300A8151C /* HTML */,
+				68AF8E2A27DB0B1800868525 /* API Manager */,
+				68E8534D27C3810D000FFBA1 /* Assets.xcassets */,
 				68E8534F27C3810D000FFBA1 /* LaunchScreen.storyboard */,
 				ED1FE7A727CF6F99009E86D3 /* Persistence.swift */,
 				ED1FE7A927CF6F9E009E86D3 /* stackview.xcdatamodeld */,
@@ -243,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68E8535527C3810D000FFBA1 /* Build configuration list for PBXNativeTarget "AutoScrollMenu" */;
 			buildPhases = (
+				E7C865C2F6418DACFCA06C07 /* [CP] Check Pods Manifest.lock */,
 				68E8533D27C3810B000FFBA1 /* Sources */,
 				68E8533E27C3810B000FFBA1 /* Frameworks */,
 				68E8533F27C3810B000FFBA1 /* Resources */,
+				D1781B46F1ACDEB20467ACA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,6 +376,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D1781B46F1ACDEB20467ACA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7C865C2F6418DACFCA06C07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoScrollMenu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		68E8533D27C3810B000FFBA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -318,10 +428,12 @@
 				685DCAC427C383150002B6BE /* ContentViewController.swift in Sources */,
 				ED1FE7B227CF6FC2009E86D3 /* WebView-ViewModel.swift in Sources */,
 				685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */,
+				68AF8E3227DB0DCA00868525 /* Reachability.swift in Sources */,
 				685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */,
 				ED1FE7A827CF6F99009E86D3 /* Persistence.swift in Sources */,
 				ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */,
 				ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */,
+				68AF8E3627DB1F1E00868525 /* Constants.swift in Sources */,
 				68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */,
 				ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */,
 				68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */,
@@ -332,10 +444,14 @@
 				68E8534527C3810B000FFBA1 /* AppDelegate.swift in Sources */,
 				68E8534727C3810B000FFBA1 /* SceneDelegate.swift in Sources */,
 				685DCACC27C383760002B6BE /* PagerMenuCell.swift in Sources */,
+				68AF8E2E27DB0BB800868525 /* ApiRequest.swift in Sources */,
 				685DCAD727C3A6DB0002B6BE /* TLCollectionView+Extension.swift in Sources */,
+				68AF8E3427DB10B000868525 /* TLNetworkManager.swift in Sources */,
 				685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */,
 				ED20591F27D9D7DC00C210AF /* FooterView.swift in Sources */,
+				68AF8E3027DB0D4100868525 /* TLReachabilityHelper.swift in Sources */,
 				68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */,
+				68AF8E2D27DB0BB800868525 /* ApiManager.swift in Sources */,
 				685DCAD527C3A3C10002B6BE /* MenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +596,7 @@
 		};
 		68E8535627C3810D000FFBA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,6 +625,7 @@
 		};
 		68E8535727C3810D000FFBA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

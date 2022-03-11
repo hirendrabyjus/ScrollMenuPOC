@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct Data: Hashable,Identifiable {
+struct RevisionData: Hashable,Identifiable {
     var mathjaxContent: String
     var id: Int
     var type: String?
