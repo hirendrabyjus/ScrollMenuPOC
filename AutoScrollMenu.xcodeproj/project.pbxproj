@@ -39,6 +39,7 @@
 		ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B327CF6FCF009E86D3 /* StackView.swift */; };
 		ED1FE7B627CF6FD4009E86D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B527CF6FD4009E86D3 /* WebView.swift */; };
 		ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1FE7B727CF6FD9009E86D3 /* CardView.swift */; };
+		ED20591F27D9D7DC00C210AF /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20591E27D9D7DC00C210AF /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		ED1FE7B327CF6FCF009E86D3 /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		ED1FE7B527CF6FD4009E86D3 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		ED1FE7B727CF6FD9009E86D3 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		ED20591E27D9D7DC00C210AF /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,11 +162,11 @@
 		685DCAE227C3A9FB0002B6BE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ED1FE7AE27CF6FAF009E86D3 /* ViewModel */,
 				ED1FE7B327CF6FCF009E86D3 /* StackView.swift */,
 				ED1FE7B727CF6FD9009E86D3 /* CardView.swift */,
 				ED1FE7B527CF6FD4009E86D3 /* WebView.swift */,
 				68E8534A27C3810B000FFBA1 /* Main.storyboard */,
+				ED20591E27D9D7DC00C210AF /* FooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +190,7 @@
 		68E8534327C3810B000FFBA1 /* AutoScrollMenu */ = {
 			isa = PBXGroup;
 			children = (
+				ED1FE7AE27CF6FAF009E86D3 /* ViewModel */,
 				68E8534427C3810B000FFBA1 /* AppDelegate.swift */,
 				68E8534627C3810B000FFBA1 /* SceneDelegate.swift */,
 				685DCAE127C3A9EE0002B6BE /* Scene */,
@@ -331,6 +334,7 @@
 				685DCACC27C383760002B6BE /* PagerMenuCell.swift in Sources */,
 				685DCAD727C3A6DB0002B6BE /* TLCollectionView+Extension.swift in Sources */,
 				685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */,
+				ED20591F27D9D7DC00C210AF /* FooterView.swift in Sources */,
 				68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */,
 				685DCAD527C3A3C10002B6BE /* MenuViewModel.swift in Sources */,
 			);
