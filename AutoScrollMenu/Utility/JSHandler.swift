@@ -32,7 +32,7 @@ extension JSHandlerProtocol {
 
 class JSHandler: NSObject, WKScriptMessageHandler {
     
-    var delegate: JSHandlerProtocol?
+    weak var delegate: JSHandlerProtocol?
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         guard let event = RevisionPageWebEvent(rawValue: message.name) else {
