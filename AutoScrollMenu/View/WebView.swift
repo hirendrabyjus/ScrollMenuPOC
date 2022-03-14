@@ -35,7 +35,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     
     var urlType: WebUrl
     @ObservedObject var viewModel: ViewModel
-    var data: [Data]
+    var data: [RevisionData]
     let jsMessageHandler: JSHandler
     
     func makeCoordinator() -> Coordinator {
