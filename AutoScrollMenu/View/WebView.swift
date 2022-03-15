@@ -34,9 +34,9 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     }
     
     var urlType: WebUrl
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel = ViewModel()
     var data: [RevisionData]
-    let jsMessageHandler: JSHandler
+    var jsMessageHandler = JSHandler()
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -61,7 +61,9 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         configuration.userContentController = wkUserController
         
         for event in RevisionPageWebEvent.allCases {
-            wkUserController.add(self.jsMessageHandler, name: event.name)
+            
+                wkUserController.add(jsMessageHandler, name: event.name)
+            
         }
         wkUserController.add(self.jsMessageHandler, name: "logHandler")
         
@@ -106,6 +108,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         deinit {
             valueSubscriber?.cancel()
             webViewNavigationSubscriber?.cancel()
+            delegate = nil
         }
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -123,11 +126,10 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
                     return
                 }
             }
-            self.parent.viewModel.showLoader.send(false)
         }
         
         func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-            parent.viewModel.showLoader.send(false)
+           
         }
         
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

@@ -11,7 +11,7 @@ import UIKit
 
 class RevisonListViewModel {
     
-    var viewModel = ViewModel()
+    //var viewModel = ViewModel()
     private var apiManager: ApiManager = ApiManager()
     let chapterID = "45989"
     let subjectID = "4"

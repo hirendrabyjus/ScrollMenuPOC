@@ -9,11 +9,14 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lableTitle.text = self.title
-        addSwiftUIView()
+        if lableTitle.text == "Quick Bites" {
+            addSwiftUIView()
+        }
+        
     }
     
     func addSwiftUIView() {
-        let swiftUIView = StackView()
+        let swiftUIView = StackView(viewModel: StackViewViewModel())
         let hostingController = UIHostingController(rootView: swiftUIView)
         hostingController.rootView.viewAllButtonPressed = {
             let revisonList = Storyboard.main.instantiateVC(RevisionListVC.self)

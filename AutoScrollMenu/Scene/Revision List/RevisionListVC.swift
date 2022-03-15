@@ -29,7 +29,7 @@ class RevisionListVC: UIViewController {
     }
     
     func addWebView() {
-        let webView = WebView(urlType: .localUrl, viewModel: revisionListViewModel.viewModel, data: revisionListViewModel.revisionLists, jsMessageHandler: jsMessageHandler)
+        let webView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists)
         self.jsMessageHandler.delegate = self
         let hostingController = UIHostingController(rootView: webView)
         self.containerView.addToSelf(view: hostingController.view)

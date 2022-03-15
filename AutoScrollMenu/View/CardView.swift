@@ -9,18 +9,16 @@ import SwiftUI
 
 struct CardView: View, Identifiable{
     
-    @ObservedObject var viewModel = ViewModel()
     @State var translation: CGSize = .zero
-    private var onRemove: () -> ()
+    @StateObject private var viewModel: StackViewViewModel
+    //private var onRemove: () -> ()
     var id = UUID()
     private var data =  [RevisionData]()
-    private var dataCount: Int
-    private let jsMessageHandler = JSHandler()
-    
-    init(data: RevisionData,dataCount: Int, onRemove: @escaping () -> Void) {
+    private var dataCount: Int    
+    init(data: RevisionData,dataCount: Int,_ viewModel : StackViewViewModel) {
         self.data.append(data)
         self.dataCount = dataCount
-        self.onRemove = onRemove
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     private func getGesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
@@ -30,7 +28,7 @@ struct CardView: View, Identifiable{
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                WebView(urlType: .localUrl, viewModel: viewModel, data: self.data, jsMessageHandler: jsMessageHandler)
+                WebView(urlType: .localUrl, data: self.data)
                     .background(Color.init(hex: "#f6f6f6"))
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
             }
@@ -50,7 +48,7 @@ struct CardView: View, Identifiable{
                         self.translation = value.translation
                     }.onEnded { value in
                         if viewModel.getGesturePercentage(geometry, from: value) > viewModel.thresholdPercentage {
-                            self.onRemove()
+                            viewModel.moveCards(true)
                         }else{
                             self.translation = .zero
                         }
@@ -62,15 +60,13 @@ struct CardView: View, Identifiable{
 }
 
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(data: RevisionData(mathjaxContent: "https://www.google.com", id: 0),dataCount: 0, onRemove: {
-            
-        })
-            .frame(height: 400)
-            .padding()
-    }
-}
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(data: RevisionData(mathjaxContent: "https://www.google.com", id: 0),dataCount: 0, StackViewViewModel())
+//            .frame(height: 400)
+//            .padding()
+//    }
+//}
 
 extension Color {
     init(hex: String) {

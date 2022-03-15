@@ -15,10 +15,6 @@ class ViewModel: ObservableObject {
     var showLoader = PassthroughSubject<Bool, Never>()
     var valuePublisher = PassthroughSubject<String, Never>()
     var thresholdPercentage: CGFloat = 0.5
-    
-    func getGesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
-        abs(gesture.translation.width / geometry.size.width)
-    }
 }
 
 enum WebViewNavigation {

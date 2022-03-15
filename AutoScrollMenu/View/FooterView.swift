@@ -10,7 +10,7 @@ import SwiftUI
 extension StackView {
     
     struct FooterView: View {
-        @StateObject var viewModel: ViewModel
+        @StateObject var viewModel: StackViewViewModel
         var viewAllButtonPressed = {}
 
         var body: some View {
@@ -36,7 +36,7 @@ extension StackView {
 
                 Spacer()
                 HStack {
-                    Text("\(viewModel.lastCardIndex - 1)\(Text("/\(String(StackView.ViewModel.datas.count))").foregroundColor(Color.init(hex: "#444444")))")
+                    Text("\(viewModel.lastCardIndex - 1)\(Text("/\(String(StackViewViewModel.datas.count))").foregroundColor(Color.init(hex: "#444444")))")
                         .font(.system(size: 14))
                         .foregroundColor(Color.init(hex: "#c7c7c7"))
                 }
@@ -57,11 +57,11 @@ extension StackView {
         }
     }
 
-    struct FooterView_Previews: PreviewProvider {
-        static var previews: some View {
-            FooterView(viewModel: ViewModel())
-        }
-    }
+//    struct FooterView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            FooterView(viewModel: StackViewViewModel())
+//        }
+//    }
 
 }
 
