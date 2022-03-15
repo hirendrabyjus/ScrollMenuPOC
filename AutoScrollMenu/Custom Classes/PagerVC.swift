@@ -1,12 +1,17 @@
 
 import UIKit
 
+protocol SelectionMenuDelegate: AnyObject {
+    func selectedMenuTab(selectedTab: Int)
+}
+
 public class PagerVC: UIViewController {
     
     @IBOutlet weak fileprivate var tabsMenuView: UIView!
     @IBOutlet weak fileprivate var containerScrollView: UIScrollView!
     @IBOutlet weak fileprivate var tabsCollectionView: UICollectionView!
     @IBOutlet weak fileprivate var tabsMenuHeightConstraint: NSLayoutConstraint!
+    weak var delegate: SelectionMenuDelegate?
     
     open var tabMenuHeight: CGFloat = 44 {
         didSet {
@@ -49,10 +54,10 @@ public class PagerVC: UIViewController {
     
     //MARK: - Private properties
     private var currentPage: Int = 0
-    private var pages = [UIViewController]()
+    private var pages = [String]()
     
     /// Default initializer with pages
-    public init(pages aPages: [UIViewController]) {
+    public init(pages aPages: [String]) {
         super.init(nibName: "PagerVC", bundle: Bundle(for: PagerVC.self))
         pages = aPages
     }
@@ -71,11 +76,6 @@ public class PagerVC: UIViewController {
     
     func setupContents() {
         containerScrollView.isScrollEnabled = true
-        for page in pages {
-            addChild(page)
-            containerScrollView.addSubview(page.view)
-            page.didMove(toParent: self)
-        }
     }
     
     func reload() {
@@ -90,12 +90,6 @@ public class PagerVC: UIViewController {
         let containerScrollViewSize = containerScrollView.frame.size
         let contentScrollWidth = containerScrollViewSize.width * CGFloat(pages.count)
         containerScrollView.contentSize = CGSize(width: contentScrollWidth, height: containerScrollViewSize.height)
-        
-        var initialX: CGFloat = 0.0
-        for (index, page) in pages.enumerated() {
-            initialX = containerScrollViewSize.width * CGFloat(index)
-            page.view.frame = CGRect(x: initialX, y: 0, width: containerScrollViewSize.width, height: containerScrollViewSize.height)
-        }
     }
     
     public override func viewWillLayoutSubviews() {
@@ -126,7 +120,7 @@ extension PagerVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
         cell.tabNameLabel.font = tabTitleFont
         cell.tabNameLabel.backgroundColor = .clear
         cell.tabNameLabel.textColor = tabTitleColor
-        cell.tabNameLabel.text = pages[indexPath.row].title
+        cell.tabNameLabel.text = pages[indexPath.row]
         
         if indexPath.row == currentPage {
             cell.tabNameLabel.textColor = selectedTabTitleColor
@@ -143,10 +137,10 @@ extension PagerVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayou
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == currentPage {
-            let width = getTitleWidth(title: pages[indexPath.row].title!, font: selectedTabTitleFont)
+            let width = getTitleWidth(title: pages[indexPath.row], font: selectedTabTitleFont)
             return CGSize(width: width, height: tabMenuHeight)
         }
-        let width = getTitleWidth(title: pages[indexPath.row].title!, font: tabTitleFont)
+        let width = getTitleWidth(title: pages[indexPath.row], font: tabTitleFont)
         return CGSize(width: width, height: tabMenuHeight)
     }
 }
@@ -172,6 +166,7 @@ extension PagerVC: UIScrollViewDelegate {
         let menuIndexPathToScroll = IndexPath(row: selectedTab, section: 0)
         tabsCollectionView.scrollToItem(at: menuIndexPathToScroll, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
         tabsCollectionView.reloadData()
+        self.delegate?.selectedMenuTab(selectedTab: selectedTab)
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

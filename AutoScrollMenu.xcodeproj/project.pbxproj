@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		685DCAC427C383150002B6BE /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAC327C383150002B6BE /* ContentViewController.swift */; };
+		685DCAC427C383150002B6BE /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAC327C383150002B6BE /* ContentVC.swift */; };
 		685DCAC727C383580002B6BE /* PagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAC527C383580002B6BE /* PagerVC.swift */; };
 		685DCAC827C383580002B6BE /* PagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685DCAC627C383580002B6BE /* PagerVC.xib */; };
 		685DCACB27C383760002B6BE /* PagerMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685DCAC927C383760002B6BE /* PagerMenuCell.xib */; };
 		685DCACC27C383760002B6BE /* PagerMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCACA27C383760002B6BE /* PagerMenuCell.swift */; };
 		685DCACF27C399B30002B6BE /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCACE27C399B20002B6BE /* ColorConstants.swift */; };
-		685DCAD527C3A3C10002B6BE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD427C3A3C00002B6BE /* MenuViewModel.swift */; };
 		685DCAD727C3A6DB0002B6BE /* TLCollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD627C3A6DB0002B6BE /* TLCollectionView+Extension.swift */; };
 		685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */; };
 		685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */; };
@@ -27,10 +26,11 @@
 		68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BFC23A27CE4AC40010E1B3 /* TLView+Extentson.swift */; };
 		68E8534527C3810B000FFBA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534427C3810B000FFBA1 /* AppDelegate.swift */; };
 		68E8534727C3810B000FFBA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534627C3810B000FFBA1 /* SceneDelegate.swift */; };
-		68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E8534827C3810B000FFBA1 /* ViewController.swift */; };
 		68E8534C27C3810B000FFBA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534A27C3810B000FFBA1 /* Main.storyboard */; };
 		68E8534E27C3810D000FFBA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534D27C3810D000FFBA1 /* Assets.xcassets */; };
 		68E8535127C3810D000FFBA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68E8534F27C3810D000FFBA1 /* LaunchScreen.storyboard */; };
+		68F4566A27E0E16000F1B3C4 /* RevisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4566727E0E16000F1B3C4 /* RevisionVC.swift */; };
+		68F4566B27E0E16000F1B3C4 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4566927E0E16000F1B3C4 /* MenuViewModel.swift */; };
 		68F5FA2C27D7429F00A8151C /* RevisionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */; };
 		68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */; };
 		DC08B24847B30F940C2EFCA0 /* Pods_AutoScrollMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */; };
@@ -52,13 +52,12 @@
 /* Begin PBXFileReference section */
 		0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoScrollMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.release.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.release.xcconfig"; sourceTree = "<group>"; };
-		685DCAC327C383150002B6BE /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		685DCAC327C383150002B6BE /* ContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		685DCAC527C383580002B6BE /* PagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerVC.swift; sourceTree = "<group>"; };
 		685DCAC627C383580002B6BE /* PagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerVC.xib; sourceTree = "<group>"; };
 		685DCAC927C383760002B6BE /* PagerMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerMenuCell.xib; sourceTree = "<group>"; };
 		685DCACA27C383760002B6BE /* PagerMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerMenuCell.swift; sourceTree = "<group>"; };
 		685DCACE27C399B20002B6BE /* ColorConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
-		685DCAD427C3A3C00002B6BE /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		685DCAD627C3A6DB0002B6BE /* TLCollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLCollectionView+Extension.swift"; sourceTree = "<group>"; };
 		685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLString+Extension.swift"; sourceTree = "<group>"; };
 		685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLStoryBoard+Extension.swift"; sourceTree = "<group>"; };
@@ -73,11 +72,12 @@
 		68E8534127C3810B000FFBA1 /* AutoScrollMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoScrollMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E8534427C3810B000FFBA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68E8534627C3810B000FFBA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		68E8534827C3810B000FFBA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68E8534B27C3810B000FFBA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68E8534D27C3810D000FFBA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68E8535027C3810D000FFBA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68E8535227C3810D000FFBA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F4566727E0E16000F1B3C4 /* RevisionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevisionVC.swift; sourceTree = "<group>"; };
+		68F4566927E0E16000F1B3C4 /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionListVC.swift; sourceTree = "<group>"; };
 		68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisonListViewModel.swift; sourceTree = "<group>"; };
 		B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.debug.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,35 +146,10 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		685DCAD127C3A31B0002B6BE /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				685DCAD327C3A32E0002B6BE /* Model */,
-				685DCAD227C3A3280002B6BE /* Controller */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
-		685DCAD227C3A3280002B6BE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				68E8534827C3810B000FFBA1 /* ViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		685DCAD327C3A32E0002B6BE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				685DCAD427C3A3C00002B6BE /* MenuViewModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		685DCAE027C3A9E50002B6BE /* ContentVC */ = {
 			isa = PBXGroup;
 			children = (
-				685DCAC327C383150002B6BE /* ContentViewController.swift */,
+				685DCAC327C383150002B6BE /* ContentVC.swift */,
 			);
 			path = ContentVC;
 			sourceTree = "<group>";
@@ -182,9 +157,9 @@
 		685DCAE127C3A9EE0002B6BE /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				68F5FA2A27D7422E00A8151C /* Revision List */,
-				685DCAD127C3A31B0002B6BE /* Menu */,
+				68F4566527E0E16000F1B3C4 /* RevisionVC */,
 				685DCAE027C3A9E50002B6BE /* ContentVC */,
+				68F5FA2A27D7422E00A8151C /* Revision List */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -271,6 +246,32 @@
 				68E8535227C3810D000FFBA1 /* Info.plist */,
 			);
 			path = AutoScrollMenu;
+			sourceTree = "<group>";
+		};
+		68F4566527E0E16000F1B3C4 /* RevisionVC */ = {
+			isa = PBXGroup;
+			children = (
+				68F4566627E0E16000F1B3C4 /* Controller */,
+				68F4566827E0E16000F1B3C4 /* Model */,
+			);
+			name = RevisionVC;
+			path = AutoScrollMenu/Scene/RevisionVC;
+			sourceTree = SOURCE_ROOT;
+		};
+		68F4566627E0E16000F1B3C4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68F4566727E0E16000F1B3C4 /* RevisionVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		68F4566827E0E16000F1B3C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68F4566927E0E16000F1B3C4 /* MenuViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		68F5FA2927D1D56300A8151C /* HTML */ = {
@@ -425,16 +426,17 @@
 			files = (
 				ED1FE7AB27CF6F9E009E86D3 /* stackview.xcdatamodeld in Sources */,
 				ED1FE7B627CF6FD4009E86D3 /* WebView.swift in Sources */,
-				685DCAC427C383150002B6BE /* ContentViewController.swift in Sources */,
+				685DCAC427C383150002B6BE /* ContentVC.swift in Sources */,
+				68F4566B27E0E16000F1B3C4 /* MenuViewModel.swift in Sources */,
 				ED1FE7B227CF6FC2009E86D3 /* WebView-ViewModel.swift in Sources */,
 				685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */,
+				68F4566A27E0E16000F1B3C4 /* RevisionVC.swift in Sources */,
 				68AF8E3227DB0DCA00868525 /* Reachability.swift in Sources */,
 				685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */,
 				ED1FE7A827CF6F99009E86D3 /* Persistence.swift in Sources */,
 				ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */,
 				ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */,
 				68AF8E3627DB1F1E00868525 /* Constants.swift in Sources */,
-				68E8534927C3810B000FFBA1 /* ViewController.swift in Sources */,
 				ED1FE7B427CF6FCF009E86D3 /* StackView.swift in Sources */,
 				68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */,
 				685DCACF27C399B30002B6BE /* ColorConstants.swift in Sources */,
@@ -452,7 +454,6 @@
 				68AF8E3027DB0D4100868525 /* TLReachabilityHelper.swift in Sources */,
 				68BFC23B27CE4AC40010E1B3 /* TLView+Extentson.swift in Sources */,
 				68AF8E2D27DB0BB800868525 /* ApiManager.swift in Sources */,
-				685DCAD527C3A3C10002B6BE /* MenuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

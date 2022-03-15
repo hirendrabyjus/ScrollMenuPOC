@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--RevisionVC-->
         <scene sceneID="Lmf-RK-ah1">
             <objects>
-                <viewController id="xeg-fJ-f6l" customClass="ViewController" customModule="AutoScrollMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RevisionVC" id="xeg-fJ-f6l" customClass="RevisionVC" customModule="AutoScrollMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9nP-WL-sl5"/>
                         <viewControllerLayoutGuide type="bottom" id="CeW-mg-pfN"/>
@@ -20,31 +20,43 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXK-Ym-qEF">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="176" width="414" height="686"/>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzv-TK-wEe">
+                                <rect key="frame" x="0.0" y="96" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="GWG-Y5-pba"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D43-MR-uNb"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LXK-Ym-qEF" firstAttribute="bottom" secondItem="D43-MR-uNb" secondAttribute="bottom" id="6H2-db-GcO"/>
+                            <constraint firstItem="kzv-TK-wEe" firstAttribute="leading" secondItem="D43-MR-uNb" secondAttribute="leading" id="M7H-kc-2FJ"/>
+                            <constraint firstItem="kzv-TK-wEe" firstAttribute="top" secondItem="D43-MR-uNb" secondAttribute="top" constant="8" id="W6c-cL-W1e"/>
+                            <constraint firstItem="kzv-TK-wEe" firstAttribute="trailing" secondItem="D43-MR-uNb" secondAttribute="trailing" id="YfI-lW-QN8"/>
                             <constraint firstItem="LXK-Ym-qEF" firstAttribute="trailing" secondItem="D43-MR-uNb" secondAttribute="trailing" id="Z1H-ra-v6d"/>
                             <constraint firstItem="LXK-Ym-qEF" firstAttribute="leading" secondItem="D43-MR-uNb" secondAttribute="leading" id="cNd-pA-5l0"/>
-                            <constraint firstItem="LXK-Ym-qEF" firstAttribute="top" secondItem="D43-MR-uNb" secondAttribute="top" id="pa1-IJ-8Vu"/>
+                            <constraint firstItem="LXK-Ym-qEF" firstAttribute="top" secondItem="kzv-TK-wEe" secondAttribute="bottom" id="wjL-tv-fcz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0V7-2h-it7"/>
                     <connections>
                         <outlet property="containerView" destination="LXK-Ym-qEF" id="YYW-HF-y80"/>
+                        <outlet property="menuHeigtConst" destination="GWG-Y5-pba" id="Jkw-yg-wSD"/>
+                        <outlet property="menuView" destination="kzv-TK-wEe" id="k8t-mS-4a0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bsv-YE-aP7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="-564"/>
+            <point key="canvasLocation" x="981.15942028985512" y="-564.50892857142856"/>
         </scene>
-        <!--Content View Controller-->
+        <!--ContentVC-->
         <scene sceneID="QAD-FC-ukS">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="jJr-0E-a3J" customClass="ContentViewController" customModule="AutoScrollMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentVC" id="jJr-0E-a3J" customClass="ContentVC" customModule="AutoScrollMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdW-pC-2xr"/>
                         <viewControllerLayoutGuide type="bottom" id="BUx-57-O0g"/>

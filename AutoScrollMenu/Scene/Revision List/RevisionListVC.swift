@@ -12,7 +12,6 @@ class RevisionListVC: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     var revisionListViewModel = RevisonListViewModel()
-    private let jsMessageHandler = JSHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,7 @@ class RevisionListVC: UIViewController {
     
     func addWebView() {
         let webView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists)
-        self.jsMessageHandler.delegate = self
+        webView.jsMessageHandler.delegate = self
         let hostingController = UIHostingController(rootView: webView)
         self.containerView.addToSelf(view: hostingController.view)
         

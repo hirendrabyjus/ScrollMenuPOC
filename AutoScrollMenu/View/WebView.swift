@@ -61,9 +61,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         configuration.userContentController = wkUserController
         
         for event in RevisionPageWebEvent.allCases {
-            
-                wkUserController.add(jsMessageHandler, name: event.name)
-            
+            wkUserController.add(jsMessageHandler, name: event.name)
         }
         wkUserController.add(self.jsMessageHandler, name: "logHandler")
         

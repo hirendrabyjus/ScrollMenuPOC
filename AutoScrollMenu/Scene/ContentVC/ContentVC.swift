@@ -2,17 +2,14 @@
 import UIKit
 import SwiftUI
 
-class ContentViewController: UIViewController {
+class ContentVC: UIViewController {
 
     @IBOutlet weak var lableTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         lableTitle.text = self.title
-        if lableTitle.text == "Quick Bites" {
-            addSwiftUIView()
-        }
-        
+        addSwiftUIView()
     }
     
     func addSwiftUIView() {
