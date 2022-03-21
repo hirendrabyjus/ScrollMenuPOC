@@ -17,6 +17,9 @@
 		685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */; };
 		685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */; };
 		685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */; };
+		689A875627E463DF00D43E24 /* RevisionList.html in Resources */ = {isa = PBXBuildFile; fileRef = 689A875527E463DF00D43E24 /* RevisionList.html */; };
+		689A875827E4641300D43E24 /* RevisionList.css in Resources */ = {isa = PBXBuildFile; fileRef = 689A875727E4641300D43E24 /* RevisionList.css */; };
+		689A875A27E466C900D43E24 /* HtmlFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A875927E466C900D43E24 /* HtmlFileName.swift */; };
 		68AF8E2D27DB0BB800868525 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2B27DB0BB700868525 /* ApiManager.swift */; };
 		68AF8E2E27DB0BB800868525 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2C27DB0BB800868525 /* ApiRequest.swift */; };
 		68AF8E3027DB0D4100868525 /* TLReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF8E2F27DB0D4100868525 /* TLReachabilityHelper.swift */; };
@@ -62,6 +65,9 @@
 		685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLString+Extension.swift"; sourceTree = "<group>"; };
 		685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLViewController+Extension.swift"; sourceTree = "<group>"; };
+		689A875527E463DF00D43E24 /* RevisionList.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RevisionList.html; sourceTree = "<group>"; };
+		689A875727E4641300D43E24 /* RevisionList.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = RevisionList.css; sourceTree = "<group>"; };
+		689A875927E466C900D43E24 /* HtmlFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlFileName.swift; sourceTree = "<group>"; };
 		68AF8E2B27DB0BB700868525 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		68AF8E2C27DB0BB800868525 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		68AF8E2F27DB0D4100868525 /* TLReachabilityHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLReachabilityHelper.swift; sourceTree = "<group>"; };
@@ -176,6 +182,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		689A875327E463A800D43E24 /* RevisonHTML */ = {
+			isa = PBXGroup;
+			children = (
+				ED1FE79F27CF6F24009E86D3 /* Revision.css */,
+				ED1FE7A127CF6F84009E86D3 /* Revision.html */,
+				ED1FE7A327CF6F8C009E86D3 /* Revision.js */,
+			);
+			path = RevisonHTML;
+			sourceTree = "<group>";
+		};
+		689A875427E463BC00D43E24 /* RevisionListHTML */ = {
+			isa = PBXGroup;
+			children = (
+				689A875527E463DF00D43E24 /* RevisionList.html */,
+				689A875727E4641300D43E24 /* RevisionList.css */,
+			);
+			path = RevisionListHTML;
+			sourceTree = "<group>";
+		};
 		68AF8E2A27DB0B1800868525 /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,9 +302,9 @@
 		68F5FA2927D1D56300A8151C /* HTML */ = {
 			isa = PBXGroup;
 			children = (
-				ED1FE79F27CF6F24009E86D3 /* Revision.css */,
-				ED1FE7A127CF6F84009E86D3 /* Revision.html */,
-				ED1FE7A327CF6F8C009E86D3 /* Revision.js */,
+				689A875927E466C900D43E24 /* HtmlFileName.swift */,
+				689A875427E463BC00D43E24 /* RevisionListHTML */,
+				689A875327E463A800D43E24 /* RevisonHTML */,
 				ED1FE7A527CF6F94009E86D3 /* mathjax.css */,
 			);
 			path = HTML;
@@ -368,6 +393,8 @@
 				ED1FE7A627CF6F94009E86D3 /* mathjax.css in Resources */,
 				68E8535127C3810D000FFBA1 /* LaunchScreen.storyboard in Resources */,
 				68E8534E27C3810D000FFBA1 /* Assets.xcassets in Resources */,
+				689A875627E463DF00D43E24 /* RevisionList.html in Resources */,
+				689A875827E4641300D43E24 /* RevisionList.css in Resources */,
 				68E8534C27C3810B000FFBA1 /* Main.storyboard in Resources */,
 				ED1FE7A427CF6F8C009E86D3 /* Revision.js in Resources */,
 				685DCACB27C383760002B6BE /* PagerMenuCell.xib in Resources */,
@@ -433,6 +460,7 @@
 				68F4566A27E0E16000F1B3C4 /* RevisionVC.swift in Sources */,
 				68AF8E3227DB0DCA00868525 /* Reachability.swift in Sources */,
 				685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */,
+				689A875A27E466C900D43E24 /* HtmlFileName.swift in Sources */,
 				ED1FE7A827CF6F99009E86D3 /* Persistence.swift in Sources */,
 				ED1FE7B827CF6FD9009E86D3 /* CardView.swift in Sources */,
 				ED1FE7AD27CF6FA9009E86D3 /* JSHandler.swift in Sources */,

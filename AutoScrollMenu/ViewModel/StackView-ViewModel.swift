@@ -13,7 +13,7 @@ class StackViewViewModel: ObservableObject {
         
         @Published var lastCardIndex: Int = 2
         @Published var translation: CGSize = .zero
-        var thresholdPercentage: CGFloat = 0.5
+        var thresholdPercentage: Double = 0.5
         
         @Published var cardViewDatas: [RevisionData] = {
             var cardViewData = [RevisionData]()

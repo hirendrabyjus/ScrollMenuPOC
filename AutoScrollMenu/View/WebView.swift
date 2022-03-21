@@ -37,6 +37,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     @StateObject var viewModel = ViewModel()
     var data: [RevisionData]
     var jsMessageHandler = JSHandler()
+    var htmlFileName: String
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -46,9 +47,11 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         
         // Enable javascript in WKWebView to interact with the web app
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        
+        //preferences.allowsContentJavaScript = true
+            
         let configuration = WKWebViewConfiguration()
+        configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+
         // Here "iOSNative" is our interface name that we pushed to the website that is being loaded
         configuration.userContentController.add(self.makeCoordinator(), name: "iOSNative")
         configuration.preferences = preferences
@@ -81,7 +84,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     func updateUIView(_ webView: WebView.UIViewType, context: UIViewRepresentableContext<WebView>) {
         if urlType == .localUrl {
             // Load local website
-            if let url = Bundle.main.url(forResource: "Revision", withExtension: "html") {
+            if let url = Bundle.main.url(forResource: htmlFileName, withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
         } else if urlType == .publicUrl {
@@ -90,6 +93,10 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
                 webView.load(URLRequest(url: url))
             }
         }
+    }
+    
+    func refreshData() {
+        
     }
     
     class Coordinator: NSObject, WKNavigationDelegate {
