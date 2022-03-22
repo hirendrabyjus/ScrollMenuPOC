@@ -33,7 +33,7 @@
 		68F4566B27E0E16000F1B3C4 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4566927E0E16000F1B3C4 /* MenuViewModel.swift */; };
 		68F5FA2C27D7429F00A8151C /* RevisionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */; };
 		68F5FA3027D876FC00A8151C /* RevisonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */; };
-		DC08B24847B30F940C2EFCA0 /* Pods_AutoScrollMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */; };
+		A03794F48D65DCB4E8514D33 /* Pods_AutoScrollMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84FCA8336000506BA3737223 /* Pods_AutoScrollMenu.framework */; };
 		ED1FE7A027CF6F24009E86D3 /* Revision.css in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE79F27CF6F24009E86D3 /* Revision.css */; };
 		ED1FE7A227CF6F84009E86D3 /* Revision.html in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A127CF6F84009E86D3 /* Revision.html */; };
 		ED1FE7A427CF6F8C009E86D3 /* Revision.js in Resources */ = {isa = PBXBuildFile; fileRef = ED1FE7A327CF6F8C009E86D3 /* Revision.js */; };
@@ -50,8 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoScrollMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.release.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.release.xcconfig"; sourceTree = "<group>"; };
+		17987CDCED85976B5BB29BC0 /* Pods-AutoScrollMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.debug.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		3FA4EEC971E5AEAB847B68F3 /* Pods-AutoScrollMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.release.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.release.xcconfig"; sourceTree = "<group>"; };
 		685DCAC327C383150002B6BE /* ContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 		685DCAC527C383580002B6BE /* PagerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerVC.swift; sourceTree = "<group>"; };
 		685DCAC627C383580002B6BE /* PagerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PagerVC.xib; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		68F4566927E0E16000F1B3C4 /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		68F5FA2B27D7429F00A8151C /* RevisionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionListVC.swift; sourceTree = "<group>"; };
 		68F5FA2F27D876FC00A8151C /* RevisonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisonListViewModel.swift; sourceTree = "<group>"; };
-		B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoScrollMenu.debug.xcconfig"; path = "Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		84FCA8336000506BA3737223 /* Pods_AutoScrollMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoScrollMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1FE79F27CF6F24009E86D3 /* Revision.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = Revision.css; sourceTree = "<group>"; };
 		ED1FE7A127CF6F84009E86D3 /* Revision.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Revision.html; sourceTree = "<group>"; };
 		ED1FE7A327CF6F8C009E86D3 /* Revision.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Revision.js; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC08B24847B30F940C2EFCA0 /* Pods_AutoScrollMenu.framework in Frameworks */,
+				A03794F48D65DCB4E8514D33 /* Pods_AutoScrollMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,18 +111,10 @@
 		0A35B00DF0139CE9A5F1A070 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */,
-				3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */,
+				17987CDCED85976B5BB29BC0 /* Pods-AutoScrollMenu.debug.xcconfig */,
+				3FA4EEC971E5AEAB847B68F3 /* Pods-AutoScrollMenu.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		33A9475F3255722458998918 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0A340CA1490AA59D964C3185 /* Pods_AutoScrollMenu.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		685DCACD27C397EC0002B6BE /* Custom Classes */ = {
@@ -215,7 +207,7 @@
 				68E8534327C3810B000FFBA1 /* AutoScrollMenu */,
 				68E8534227C3810B000FFBA1 /* Products */,
 				0A35B00DF0139CE9A5F1A070 /* Pods */,
-				33A9475F3255722458998918 /* Frameworks */,
+				F2926D167B6770137EFBA21C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,6 +295,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F2926D167B6770137EFBA21C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84FCA8336000506BA3737223 /* Pods_AutoScrollMenu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,11 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68E8535527C3810D000FFBA1 /* Build configuration list for PBXNativeTarget "AutoScrollMenu" */;
 			buildPhases = (
-				E7C865C2F6418DACFCA06C07 /* [CP] Check Pods Manifest.lock */,
+				137D59E976B39958C0148D7A /* [CP] Check Pods Manifest.lock */,
 				68E8533D27C3810B000FFBA1 /* Sources */,
 				68E8533E27C3810B000FFBA1 /* Frameworks */,
 				68E8533F27C3810B000FFBA1 /* Resources */,
-				D1781B46F1ACDEB20467ACA6 /* [CP] Embed Pods Frameworks */,
+				F9BEC65228CD9CD975DDA428 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,24 +378,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D1781B46F1ACDEB20467ACA6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7C865C2F6418DACFCA06C07 /* [CP] Check Pods Manifest.lock */ = {
+		137D59E976B39958C0148D7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,6 +398,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9BEC65228CD9CD975DDA428 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoScrollMenu/Pods-AutoScrollMenu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -597,7 +597,7 @@
 		};
 		68E8535627C3810D000FFBA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B62EC1913EE25AEECBF36C2F /* Pods-AutoScrollMenu.debug.xcconfig */;
+			baseConfigurationReference = 17987CDCED85976B5BB29BC0 /* Pods-AutoScrollMenu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -626,7 +626,7 @@
 		};
 		68E8535727C3810D000FFBA1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3978A6E7CA9F34F615E12A55 /* Pods-AutoScrollMenu.release.xcconfig */;
+			baseConfigurationReference = 3FA4EEC971E5AEAB847B68F3 /* Pods-AutoScrollMenu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

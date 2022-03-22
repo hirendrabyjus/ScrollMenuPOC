@@ -15,6 +15,7 @@ class ViewModel: ObservableObject {
     var showLoader = PassthroughSubject<Bool, Never>()
     var valuePublisher = PassthroughSubject<String, Never>()
     var thresholdPercentage: CGFloat = 0.5
+    
 }
 
 enum WebViewNavigation {

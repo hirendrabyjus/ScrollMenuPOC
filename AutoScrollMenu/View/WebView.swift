@@ -1,5 +1,4 @@
-//
-//  WebView.swift
+
 //  stackview
 //
 //  Created by Pannaga Bhushana on 15/02/22.
@@ -23,7 +22,7 @@ protocol WebViewHandlerDelegate {
     func receivedStringValueFromWebView(value: String)
 }
 
-struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
+struct WebView: UIViewRepresentable{
     
     func receivedJsonValueFromWebView(value: [String : Any?]) {
         
@@ -37,35 +36,13 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     @StateObject var viewModel = ViewModel()
     var data: [RevisionData]
     var jsMessageHandler = JSHandler()
-    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
     func makeUIView(context: Context) -> WKWebView {
         
-        // Enable javascript in WKWebView to interact with the web app
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        
-        let configuration = WKWebViewConfiguration()
-        // Here "iOSNative" is our interface name that we pushed to the website that is being loaded
-        configuration.userContentController.add(self.makeCoordinator(), name: "iOSNative")
-        configuration.preferences = preferences
-        
-        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog; window.console.error = captureLog;"
-        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
-
-        let wkUserController = WKUserContentController()
-        wkUserController.addUserScript(script)
-        configuration.userContentController = wkUserController
-        
-        for event in RevisionPageWebEvent.allCases {
-            wkUserController.add(jsMessageHandler, name: event.name)
-        }
-        wkUserController.add(self.jsMessageHandler, name: "logHandler")
-        
-        let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
+        let webView = WKWebView(frame: CGRect.zero, configuration: jsMessageHandler.webViewConfiguration)
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
         
@@ -100,13 +77,13 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
         
         init(_ uiWebView: WebView) {
             self.parent = uiWebView
-            self.delegate = parent
         }
         
         deinit {
             valueSubscriber?.cancel()
             webViewNavigationSubscriber?.cancel()
             delegate = nil
+            self.parent.jsMessageHandler.cleanUp()
         }
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -169,17 +146,7 @@ struct WebView: UIViewRepresentable,WebViewHandlerDelegate {
     }
 }
 
-extension WebView.Coordinator: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        // Make sure that your passed delegate is called
-        if message.name == "iOSNative" {
-            if let body = message.body as? [String: Any?] {
-                print("JSON value received from web is: \(body)")
-            } else if let body = message.body as? String {
-                print("String value received from web is: \(body)")
-            }
-        }
-    }
+extension WebView.Coordinator{
     
     func encodeDictionary(_ dictionary: [String: Any]) -> String? {
         guard let theJSONData = try? JSONSerialization.data(

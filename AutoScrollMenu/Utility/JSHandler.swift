@@ -33,6 +33,50 @@ extension JSHandlerProtocol {
 class JSHandler: NSObject, WKScriptMessageHandler {
     
     weak var delegate: JSHandlerProtocol?
+    
+    
+    private let contentController = WKUserContentController()
+    
+    var webViewConfiguration: WKWebViewConfiguration {
+        let preferences = WKPreferences()
+        preferences.javaScriptEnabled = true
+        
+        let configuration = WKWebViewConfiguration()
+//        configuration.preferences = preferences
+//
+//        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog; window.console.error = captureLog;"
+//        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+//
+//        contentController.addUserScript(script)
+        configuration.userContentController = contentController
+        
+        for event in RevisionPageWebEvent.allCases {
+            contentController.add(self, name: event.name)
+        }
+        contentController.add(self, name: "logHandler")
+        
+        let config = WKWebViewConfiguration()
+        config.userContentController = self.contentController
+        
+        return config
+    }
+    
+    /// Remove all message handlers manually because the WKUserContentController keeps a strong reference on them
+    func cleanUp() {
+        DispatchQueue.main.async { [weak self] in
+            for event in RevisionPageWebEvent.allCases {
+                self?.contentController.removeScriptMessageHandler(forName: event.name)
+            }
+            self?.contentController.removeScriptMessageHandler(forName: "logHandler")
+        }
+        
+
+    }
+    
+    deinit {
+        print("Deinitialized")
+    }
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
         guard let event = RevisionPageWebEvent(rawValue: message.name) else {
