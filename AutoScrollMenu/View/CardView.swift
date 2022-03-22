@@ -28,7 +28,7 @@ struct CardView: View, Identifiable{
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                WebView(urlType: .localUrl, data: self.data)
+                WebView(urlType: .localUrl, data: self.data, htmlFileName: HtmlFileName.cardView.fileName)
                     .background(Color.init(hex: "#f6f6f6"))
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
             }

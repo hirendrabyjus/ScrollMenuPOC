@@ -36,12 +36,15 @@ struct WebView: UIViewRepresentable{
     @StateObject var viewModel = ViewModel()
     var data: [RevisionData]
     var jsMessageHandler = JSHandler()
+    var htmlFileName: String
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
     
     func makeUIView(context: Context) -> WKWebView {
         
+
         let webView = WKWebView(frame: CGRect.zero, configuration: jsMessageHandler.webViewConfiguration)
         webView.navigationDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = true
@@ -58,7 +61,7 @@ struct WebView: UIViewRepresentable{
     func updateUIView(_ webView: WebView.UIViewType, context: UIViewRepresentableContext<WebView>) {
         if urlType == .localUrl {
             // Load local website
-            if let url = Bundle.main.url(forResource: "Revision", withExtension: "html") {
+            if let url = Bundle.main.url(forResource: htmlFileName, withExtension: "html") {
                 webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
             }
         } else if urlType == .publicUrl {
@@ -67,6 +70,10 @@ struct WebView: UIViewRepresentable{
                 webView.load(URLRequest(url: url))
             }
         }
+    }
+    
+    func refreshData() {
+        
     }
     
     class Coordinator: NSObject, WKNavigationDelegate {

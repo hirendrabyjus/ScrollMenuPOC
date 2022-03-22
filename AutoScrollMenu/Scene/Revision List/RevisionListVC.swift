@@ -11,7 +11,7 @@ import SwiftUI
 class RevisionListVC: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
-    var revisionListViewModel = RevisonListViewModel()
+    private var revisionListViewModel = RevisonListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,25 +28,18 @@ class RevisionListVC: UIViewController {
     }
     
     func addWebView() {
-        let webView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists)
+        let webView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
         webView.jsMessageHandler.delegate = self
         let hostingController = UIHostingController(rootView: webView)
         self.containerView.addToSelf(view: hostingController.view)
-        
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [
-            hostingController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
-            hostingController.view.leftAnchor.constraint(equalTo: containerView.leftAnchor),
-            containerView.bottomAnchor.constraint(equalTo: hostingController.view.bottomAnchor),
-            containerView.rightAnchor.constraint(equalTo: hostingController.view.rightAnchor)
-        ]
-        NSLayoutConstraint.activate(constraints)
+        hostingController.activateConstraints(containerView: containerView)
         hostingController.didMove(toParent: self)
     }
     
 }
 
 extension RevisionListVC: JSHandlerProtocol {
+    
     func revisionTapped(questionText: String, index: String?, qID: String?) {
         print(qID as Any)
     }
