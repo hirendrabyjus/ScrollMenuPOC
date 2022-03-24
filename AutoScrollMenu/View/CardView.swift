@@ -15,7 +15,7 @@ struct CardView: View, Identifiable{
     var id = UUID()
     private var data =  [RevisionData]()
     private var dataCount: Int    
-    init(data: RevisionData,dataCount: Int,_ viewModel : StackViewViewModel) {
+    init(_ data: RevisionData,dataCount: Int,_ viewModel : StackViewViewModel) {
         self.data.append(data)
         self.dataCount = dataCount
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -28,7 +28,7 @@ struct CardView: View, Identifiable{
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                WebView(urlType: .localUrl, data: self.data, htmlFileName: HtmlFileName.cardView.fileName)
+                WebView(urlType: .localUrl, data: data, htmlFileName: HtmlFileName.cardView.fileName)
                     .background(Color.init(hex: "#f6f6f6"))
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
             }

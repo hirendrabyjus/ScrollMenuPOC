@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class ViewModel: ObservableObject {
     var webViewNavigationPublisher = PassthroughSubject<WebViewNavigation, Never>()

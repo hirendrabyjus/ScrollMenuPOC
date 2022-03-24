@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -123,6 +124,36 @@
             </objects>
             <point key="canvasLocation" x="2314" y="-556"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="qA4-yE-tUe">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lgR-ug-eUl" customClass="WebViewController" customModule="AutoScrollMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7x-wz-Eqz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHL-cQ-FpK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fJV-6J-eT4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fJV-6J-eT4" firstAttribute="trailing" secondItem="jHL-cQ-FpK" secondAttribute="trailing" id="3b3-nX-cFg"/>
+                            <constraint firstItem="fJV-6J-eT4" firstAttribute="bottom" secondItem="jHL-cQ-FpK" secondAttribute="bottom" id="7oG-4q-5Cg"/>
+                            <constraint firstItem="jHL-cQ-FpK" firstAttribute="leading" secondItem="fJV-6J-eT4" secondAttribute="leading" id="afn-8V-1pb"/>
+                            <constraint firstItem="jHL-cQ-FpK" firstAttribute="top" secondItem="fJV-6J-eT4" secondAttribute="top" id="cWb-Q7-AVV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="jHL-cQ-FpK" id="Bp4-B9-zGt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5f-ef-ASg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551" y="-643"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WLO-1S-iod">
             <objects>
@@ -142,4 +173,9 @@
             <point key="canvasLocation" x="229.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

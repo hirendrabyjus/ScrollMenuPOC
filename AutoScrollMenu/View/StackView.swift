@@ -53,7 +53,7 @@ extension StackView{
     func getCardViews() -> [CardView] {
         var cards = [CardView]()
         for data in viewModel.cardViewDatas {
-            let card = CardView(data: data, dataCount: StackViewViewModel.datas.count, viewModel)
+            let card = CardView(data, dataCount: StackViewViewModel.datas.count, viewModel)
             cards.append(card)
         }
         return cards

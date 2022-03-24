@@ -20,10 +20,10 @@ class RevisionVC: UIViewController {
     private var menuViewModel: MenuViewModel = MenuViewModel()
     private var revisionListViewModel = RevisonListViewModel()
     var revisioWebView: WebView?
+    var delegate: WebViewHandlerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.addPagerMenu()
         self.addContentView()
     }
@@ -48,7 +48,7 @@ class RevisionVC: UIViewController {
     
     func addRevisionWebView() {
         if revisioWebView == nil {
-            revisioWebView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists,htmlFileName: HtmlFileName.revisionList.fileName)
+            revisioWebView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists,htmlFileName: HtmlFileName.revisionList.fileName,revisionVC: self)
             revisioWebView?.jsMessageHandler.delegate = self
             let hostingController = UIHostingController(rootView: revisioWebView)
             self.containerView.addToSelf(view: hostingController.view)
@@ -60,15 +60,19 @@ class RevisionVC: UIViewController {
     func refreshWebViewData(menuType: MenuType) {
         switch menuType {
         case .quickBites:
-            revisioWebView?.data = revisionListViewModel.revisionLists
-            
+            if revisioWebView != nil{
+                revisioWebView?.hidden()
+            }
+            //revisioWebView?.data = revisionListViewModel.revisionLists
+            delegate?.didDataChange(data: revisionListViewModel.revisionLists)
         case .summary:
-            revisioWebView?.data = revisionListViewModel.revisionQuestions
+            //revisioWebView?.data = revisionListViewModel.revisionQuestions
+            delegate?.didDataChange(data: revisionListViewModel.revisionQuestions)
             
         case .questions:
-            revisioWebView?.data = revisionListViewModel.revisionQuestions
+            //revisioWebView?.data = revisionListViewModel.revisionQuestions
+            delegate?.didDataChange(data: revisionListViewModel.revisionQuestions)
         }
-        revisioWebView?.refreshData()
     }
 }
 
