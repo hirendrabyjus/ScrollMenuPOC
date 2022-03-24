@@ -38,10 +38,12 @@ class JSHandler: NSObject, WKScriptMessageHandler {
     private let contentController = WKUserContentController()
     
     var webViewConfiguration: WKWebViewConfiguration {
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
+//        let preferences = WKPreferences()
+//        preferences.javaScriptEnabled = true
         
         let configuration = WKWebViewConfiguration()
+        configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+
 //        configuration.preferences = preferences
 //
 //        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog; window.console.error = captureLog;"
@@ -69,8 +71,6 @@ class JSHandler: NSObject, WKScriptMessageHandler {
             }
             self?.contentController.removeScriptMessageHandler(forName: "logHandler")
         }
-        
-
     }
     
     deinit {

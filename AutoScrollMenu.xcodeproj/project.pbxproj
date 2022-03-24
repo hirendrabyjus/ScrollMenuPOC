@@ -17,6 +17,7 @@
 		685DCAD927C3A6F70002B6BE /* TLString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */; };
 		685DCADB27C3A7030002B6BE /* TLStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */; };
 		685DCADF27C3A7410002B6BE /* TLViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */; };
+		688C693D27EC2ED500BFAF46 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C693C27EC2ED500BFAF46 /* WebViewController.swift */; };
 		689A875627E463DF00D43E24 /* RevisionList.html in Resources */ = {isa = PBXBuildFile; fileRef = 689A875527E463DF00D43E24 /* RevisionList.html */; };
 		689A875827E4641300D43E24 /* RevisionList.css in Resources */ = {isa = PBXBuildFile; fileRef = 689A875727E4641300D43E24 /* RevisionList.css */; };
 		689A875A27E466C900D43E24 /* HtmlFileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689A875927E466C900D43E24 /* HtmlFileName.swift */; };
@@ -65,6 +66,7 @@
 		685DCAD827C3A6F70002B6BE /* TLString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLString+Extension.swift"; sourceTree = "<group>"; };
 		685DCADA27C3A7030002B6BE /* TLStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLStoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		685DCADE27C3A7410002B6BE /* TLViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TLViewController+Extension.swift"; sourceTree = "<group>"; };
+		688C693C27EC2ED500BFAF46 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		689A875527E463DF00D43E24 /* RevisionList.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RevisionList.html; sourceTree = "<group>"; };
 		689A875727E4641300D43E24 /* RevisionList.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = RevisionList.css; sourceTree = "<group>"; };
 		689A875927E466C900D43E24 /* HtmlFileName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HtmlFileName.swift; sourceTree = "<group>"; };

@@ -25,11 +25,7 @@ struct WebView: UIViewControllerRepresentable{
     
     
     typealias UIViewControllerType = WebViewController
-    
    
-    
-    
-    
     var urlType: WebUrl
     var viewModel = ViewModel()
     var data: [RevisionData]
@@ -38,7 +34,7 @@ struct WebView: UIViewControllerRepresentable{
     var revisionVC: RevisionVC?
     
     func makeUIViewController(context: Context) -> WebViewController {
-        WebViewController.instantiate(type: urlType, data: data)
+        WebViewController.instantiate(type: urlType, data: data, htmlFileName: HtmlFileName.cardView.fileName)
     }
 
         func updateUIViewController(_ viewController: WebViewController,

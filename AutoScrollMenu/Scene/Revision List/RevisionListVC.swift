@@ -15,7 +15,7 @@ class RevisionListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addWebView()
+        addRevisionWebView()
         //getRevisionAPI()
     }
     
@@ -27,13 +27,10 @@ class RevisionListVC: UIViewController {
         }
     }
     
-    func addWebView() {
-        let webView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
-        webView.jsMessageHandler.delegate = self
-        let hostingController = UIHostingController(rootView: webView)
-        self.containerView.addToSelf(view: hostingController.view)
-        hostingController.activateConstraints(containerView: containerView)
-        hostingController.didMove(toParent: self)
+    func addRevisionWebView() {
+        let revisioWebViewVC = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
+        revisioWebViewVC.jsMessageHandler.delegate = self
+        self.view.addToSelf(view: revisioWebViewVC.view)
     }
     
 }

@@ -19,7 +19,7 @@ class RevisionVC: UIViewController {
     @IBOutlet weak var menuHeigtConst: NSLayoutConstraint!
     private var menuViewModel: MenuViewModel = MenuViewModel()
     private var revisionListViewModel = RevisonListViewModel()
-    var revisioWebView: WebView?
+    var revisioWebViewVC: WebViewController?
     var delegate: WebViewHandlerDelegate?
     
     override func viewDidLoad() {
@@ -47,32 +47,32 @@ class RevisionVC: UIViewController {
     }
     
     func addRevisionWebView() {
-        if revisioWebView == nil {
-            revisioWebView = WebView(urlType: .localUrl, data: revisionListViewModel.revisionLists,htmlFileName: HtmlFileName.revisionList.fileName,revisionVC: self)
-            revisioWebView?.jsMessageHandler.delegate = self
-            let hostingController = UIHostingController(rootView: revisioWebView)
-            self.containerView.addToSelf(view: hostingController.view)
-            hostingController.activateConstraints(containerView: containerView)
-            hostingController.didMove(toParent: self)
+        if revisioWebViewVC == nil {
+            revisioWebViewVC = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
+            revisioWebViewVC?.jsMessageHandler.delegate = self
+            self.containerView.addToSelf(view: revisioWebViewVC?.view)
         }
     }
     
     func refreshWebViewData(menuType: MenuType) {
+        revisioWebViewVC?.view.isHidden = false
+        
         switch menuType {
         case .quickBites:
-            if revisioWebView != nil{
-                revisioWebView?.hidden()
-            }
-            //revisioWebView?.data = revisionListViewModel.revisionLists
-            delegate?.didDataChange(data: revisionListViewModel.revisionLists)
+            revisioWebViewVC?.revisionData = revisionListViewModel.revisionLists
+            revisioWebViewVC?.htmlFileName = HtmlFileName.cardView.fileName
+            revisioWebViewVC?.view.isHidden = true
+            
         case .summary:
-            //revisioWebView?.data = revisionListViewModel.revisionQuestions
-            delegate?.didDataChange(data: revisionListViewModel.revisionQuestions)
+            revisioWebViewVC?.revisionData = revisionListViewModel.revisionLists
+            revisioWebViewVC?.htmlFileName = HtmlFileName.revisionList.fileName
             
         case .questions:
-            //revisioWebView?.data = revisionListViewModel.revisionQuestions
-            delegate?.didDataChange(data: revisionListViewModel.revisionQuestions)
+            revisioWebViewVC?.revisionData = revisionListViewModel.revisionQuestions
+            revisioWebViewVC?.htmlFileName = HtmlFileName.revisionList.fileName
         }
+        
+        revisioWebViewVC?.loadUrl()
     }
 }
 
