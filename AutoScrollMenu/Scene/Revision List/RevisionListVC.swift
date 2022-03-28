@@ -28,9 +28,10 @@ class RevisionListVC: UIViewController {
     }
     
     func addRevisionWebView() {
-        let revisioWebViewVC = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
-        revisioWebViewVC.jsMessageHandler.delegate = self
-        self.containerView.addToSelf(view: revisioWebViewVC.view)
+        let revisionWebView = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
+        revisionWebView.jsMessageHandler.delegate = self
+        self.addChildVC(revisionWebView, containerView)
+        revisionWebView.activateContainerViewConstraints(containerView)
     }
     
 }

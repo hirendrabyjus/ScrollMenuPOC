@@ -19,7 +19,7 @@ class RevisionVC: UIViewController {
     @IBOutlet weak var menuHeigtConst: NSLayoutConstraint!
     private var menuViewModel: MenuViewModel = MenuViewModel()
     private var revisionListViewModel = RevisonListViewModel()
-    var revisioWebViewVC: WebViewController?
+    var revisionWebView: WebViewController?
     var delegate: WebViewHandlerDelegate?
     
     override func viewDidLoad() {
@@ -47,32 +47,34 @@ class RevisionVC: UIViewController {
     }
     
     func addRevisionWebView() {
-        if revisioWebViewVC == nil {
-            revisioWebViewVC = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
-            revisioWebViewVC?.jsMessageHandler.delegate = self
-            self.containerView.addToSelf(view: revisioWebViewVC?.view)
+        if revisionWebView == nil {
+            revisionWebView = WebViewController.instantiate(type: .localUrl, data: revisionListViewModel.revisionLists, htmlFileName: HtmlFileName.revisionList.fileName)
+            
+            guard let revisionWebView = revisionWebView else { return }
+            
+            revisionWebView.jsMessageHandler.delegate = self
+            self.addChildVC(revisionWebView, containerView)
+            revisionWebView.activateContainerViewConstraints(containerView)
         }
     }
     
     func refreshWebViewData(menuType: MenuType) {
-        revisioWebViewVC?.view.isHidden = false
+        revisionWebView?.view.isHidden = false
         
         switch menuType {
         case .quickBites:
-            revisioWebViewVC?.revisionData = revisionListViewModel.revisionLists
-            revisioWebViewVC?.htmlFileName = HtmlFileName.cardView.fileName
-            revisioWebViewVC?.view.isHidden = true
+            revisionWebView?.view.isHidden = true
             
         case .summary:
-            revisioWebViewVC?.revisionData = revisionListViewModel.revisionLists
-            revisioWebViewVC?.htmlFileName = HtmlFileName.revisionList.fileName
+            revisionWebView?.revisionData = revisionListViewModel.revisionLists
+            revisionWebView?.htmlFileName = HtmlFileName.revisionList.fileName
             
         case .questions:
-            revisioWebViewVC?.revisionData = revisionListViewModel.revisionQuestions
-            revisioWebViewVC?.htmlFileName = HtmlFileName.revisionList.fileName
+            revisionWebView?.revisionData = revisionListViewModel.revisionQuestions
+            revisionWebView?.htmlFileName = HtmlFileName.revisionList.fileName
         }
         
-        revisioWebViewVC?.loadUrl()
+        revisionWebView?.loadUrl()
     }
 }
 
